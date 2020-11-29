@@ -6,7 +6,7 @@
         <ul class="nav navbar-nav ml-auto">
           <li class="nav-item"><router-link class="nav-link active" to="/">Home</router-link> </li>
           <li class="nav-item"><router-link class="nav-link active" to="/about">A propos</router-link> </li>
-          <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+          <li class="nav-item"><router-link class="nav-link active" to="/test">test</router-link> </li>
           <li class="nav-item"><router-link class="nav-link active" to="/contact">Contact</router-link> </li>
           <li class="nav-item"><a class="nav-link" href="hire-me.html">Hire me</a></li>
         </ul>
