@@ -5,6 +5,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Contact from '../views/Contact.vue'
+import PicturesTest from "../views/PicturesTest";
 Vue.use(VueRouter)
 
 const routes = [
@@ -32,6 +33,11 @@ const routes = [
     path: '/contact',
     name:'Contact',
     component: Contact
+  },
+  {
+    path: '/test',
+    name:'test',
+    component: PicturesTest
   }
 ]
 
