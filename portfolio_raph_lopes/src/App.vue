@@ -36,6 +36,11 @@
     import Navbar from "./components/Navbar";
     import footerbar from "./components/footerbar";
     export default {
-        components: {Navbar, footerbar}
+        components: {Navbar, footerbar},
+        watch: {
+            '$route' (to) {
+                document.title = to.meta.title || 'yala'
+            }
+        },
     }
 </script>
