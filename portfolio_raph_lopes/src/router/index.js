@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
+import Contact from '../views/Contact.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -25,7 +26,12 @@ const routes = [
     component: About,
     meta : {
       title : "0-6 draven"
-    }
+    },
+  },
+  {
+    path: '/contact',
+    name:'Contact',
+    component: Contact
   }
 ]
 
