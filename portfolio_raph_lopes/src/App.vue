@@ -4,7 +4,7 @@
     <div class="mt-5 pt-5">
       <router-view/>
     </div>
-    
+    <footerbar></footerbar>
   </div>
 </template>
 
@@ -34,7 +34,8 @@
 <script>
   
     import Navbar from "./components/Navbar";
+    import footerbar from "./components/footerbar";
     export default {
-        components: {Navbar}
+        components: {Navbar, footerbar}
     }
 </script>
