@@ -1,7 +1,7 @@
 <template>
   <section>
   <div class="row no-gutters">
-    <div class="col-md-6 col-lg-4 item zoom-on-hover">
+    <div class="col-md-6 col-lg-4">
     <a>
       <img class="img-fluid image" src="../assets/imgcover/japan.jpg">
     </a>
