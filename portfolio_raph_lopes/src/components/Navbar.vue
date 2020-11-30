@@ -4,8 +4,8 @@
       <div class="collapse navbar-collapse"
            id="navbarNav">
         <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item" >
-            <router-link id="Acceuil" class="nav-link active" @click="actionHover" @mousehover="actionHover"
+          <li class="nav-item" @click="actionHover" @mouseover="actionHover">
+            <router-link id="Acceuil" class="nav-link active"
                          @mouseleave="actionLeavehover()" to="/">Accueil</router-link>
 
           </li>
@@ -26,6 +26,7 @@
         data: function(){
           return {
             compeurhover: 0,
+              color: "white"
           }
         },
         methods : {

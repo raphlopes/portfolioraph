@@ -29,7 +29,7 @@
         components: {},
         methods : {
             
-            test : function (arg) {
+            test : function () {
 
                 console.log("yes");
             }
