@@ -5,8 +5,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Contact from '../views/Contact.vue'
-import PicturesTest from "../views/PicturesTest"
-import Shop from "../views/Shop";
+import PicturesTest from '../views/PicturesTest'
+import Shop from "../views/Shop"
 
 Vue.use(VueRouter)
 
@@ -20,7 +20,7 @@ const routes = [
     name: 'Home',
     component: Home,
     meta : {
-      title : "rundown draven"
+      title : "Portfolio Raphael Lopes"
     }
   },
   {
@@ -28,15 +28,15 @@ const routes = [
     name: 'About',
     component: About,
     meta : {
-      title : "0-6 draven"
-    },
+      title : "A propos"
+    }
   },
   {
     path: '/contact',
     name:'Contact',
     component: Contact,
     meta : {
-      title : "Contact me"
+      title : "Me contacter"
     },
   },
   {
@@ -46,11 +46,9 @@ const routes = [
   },
   {
     path: '/shop',
-    name: 'Shop',
+    name:'Shop',
     component: Shop,
-    meta : {
-      title : "Shop Raph photo"
-    },
+
   }
 ]
 
