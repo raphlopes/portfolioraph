@@ -5,7 +5,7 @@
            id="navbarNav">
         <ul class="nav navbar-nav ml-auto">
           <li class="nav-item" >
-            <router-link id="Acceuil" class="nav-link active" @click="actionHover" @hover="actionHover"
+            <router-link id="Acceuil" class="nav-link active" @click="actionHover" @mousehover="actionHover"
                          @mouseleave="actionLeavehover()" to="/">Accueil</router-link>
 
           </li>
