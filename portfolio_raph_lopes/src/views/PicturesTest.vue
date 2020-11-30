@@ -11,7 +11,7 @@
           <img class="img-fluid image w-100 h-100" src="../assets/imgcover/greece.jpg">
         </a>
       </div>
-      <div class="col-md-6 col-lg-4 item">
+      <div class="col-md-6 col-lg-4 item" @mouseover="test">
         <a>
           <img class="img-fluid image w-100 h-100" src="../assets/imgcover/nights.jpg">
         </a>
@@ -26,7 +26,14 @@
 
     export default {
         name: "PicturesTest",
-        components: {}
+        components: {},
+        methods : {
+            
+            test : function (arg) {
+
+                console.log("yes");
+            }
+        }
     }
 </script>
 
