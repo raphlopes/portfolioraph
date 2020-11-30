@@ -1,17 +1,17 @@
 <template>
-  <section>
+  <section class="covers">
     <div class="row px-4" >
-      <div class="col-md-6 col-lg-4 item ">
-        <a class="">
+      <div class="col-md-6 col-lg-4 item img-covers">
+        <a>
           <img class="img-fluid image w-100 h-100" src="../assets/imgcover/japan.jpg">
         </a>
       </div>
-      <div class="col-md-6 col-lg-4 item">
+      <div class="col-md-6 col-lg-4 item img-covers">
         <a>
           <img class="img-fluid image w-100 h-100" src="../assets/imgcover/greece.jpg">
         </a>
       </div>
-      <div class="col-md-6 col-lg-4 item" @mouseover="test">
+      <div class="col-md-6 col-lg-4 item img-covers">
         <a>
           <img class="img-fluid image w-100 h-100" src="../assets/imgcover/nights.jpg">
         </a>
@@ -26,24 +26,22 @@
 
     export default {
         name: "PicturesTest",
-        components: {},
-        methods : {
-            
-            test : function () {
-
-                console.log("yes");
-            }
-        }
+        components: {}
     }
 </script>
 
 <style scoped>
-  
-  .project-covers {
+
+  .img-covers{
+    border: lightgrey;
+  }
+  .covers {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: 0px;
-    padding-top: 0px;
+    padding-bottom: 2.5%;
+    padding-top: 2.5%;
+    padding-left: 1%;
+    padding-right: 1%;
   }
   
 
