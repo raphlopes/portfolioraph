@@ -52,6 +52,9 @@ name: "footerbar"
 </script>
 
 <style scoped>
+.social-icons a{
+  background-color: unset;
+}
 
 ul {
   list-style-type: none;
