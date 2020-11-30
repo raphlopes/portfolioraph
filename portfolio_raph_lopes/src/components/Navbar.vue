@@ -6,7 +6,7 @@
         <ul class="nav navbar-nav ml-auto">
           <li class="nav-item" @click="actionHover" @mouseover="actionHover">
             <router-link id="Acceuil" class="nav-link active"
-                         @mouseleave="actionLeavehover()" to="/">Accueil</router-link>
+                          to="/">Accueil</router-link>
 
           </li>
           <li class="nav-item"><router-link class="nav-link active" to="/about">A propos</router-link> </li>
@@ -30,14 +30,14 @@
           }
         },
         methods : {
-          actionHover : function(arg){
+          actionHover : function(){
             this.color='black';
-            console.log('test de couleur'+arg);
+            console.log('test de couleur');
 
           },
-          actionLeavehover(){
+          actionLeavehover : function(){
             this.color='white';
-            console.log="test de leave couleur";
+            console.log('test de leave couleur');
           }
         }
     }
