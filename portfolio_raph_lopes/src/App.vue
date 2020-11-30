@@ -9,6 +9,10 @@
 </template>
 
 <style lang="scss">
+/*
+body {
+  background-color: #222222;
+}*/
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -16,7 +20,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: #222222;
 }
 
 #nav {

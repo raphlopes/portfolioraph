@@ -5,7 +5,9 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Contact from '../views/Contact.vue'
-import PicturesTest from "../views/PicturesTest";
+import PicturesTest from "../views/PicturesTest"
+import Shop from "../views/Shop";
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -32,12 +34,23 @@ const routes = [
   {
     path: '/contact',
     name:'Contact',
-    component: Contact
+    component: Contact,
+    meta : {
+      title : "Contact me"
+    },
   },
   {
     path: '/test',
     name:'test',
     component: PicturesTest
+  },
+  {
+    path: '/shop',
+    name: 'Shop',
+    component: Shop,
+    meta : {
+      title : "Shop Raph photo"
+    },
   }
 ]
 

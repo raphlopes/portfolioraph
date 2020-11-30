@@ -4,11 +4,12 @@
       <div class="collapse navbar-collapse"
            id="navbarNav">
         <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item"><router-link class="nav-link active" to="/">Home</router-link> </li>
+          <li class="nav-item"><router-link class="nav-link active" to="/">Accueil</router-link> </li>
           <li class="nav-item"><router-link class="nav-link active" to="/about">A propos</router-link> </li>
-          <li class="nav-item"><router-link class="nav-link active" to="/test">test</router-link> </li>
+          <li class="nav-item"><router-link class="nav-link active" to="/test">My Work</router-link> </li>
+          <li class="nav-item"><router-link class="nav-link active" to="/shop">Shop</router-link> </li>
           <li class="nav-item"><router-link class="nav-link active" to="/contact">Contact</router-link> </li>
-          <li class="nav-item"><a class="nav-link" href="hire-me.html">Hire me</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="hire-me.html">Hire me</a></li> -->
         </ul>
       </div>
     </div>
