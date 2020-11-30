@@ -9,10 +9,10 @@
 </template>
 
 <style lang="scss">
-/*
+
 body {
   background-color: #222222;
-}*/
+}
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
