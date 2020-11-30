@@ -52,8 +52,15 @@ name: "footerbar"
 </script>
 
 <style scoped>
+
+.page-footer{
+  color: rgb(85, 85, 85);
+}
+
 .social-icons a{
+  border-color: unset;
   background-color: unset;
+
 }
 
 ul {
