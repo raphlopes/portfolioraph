@@ -1,12 +1,12 @@
 <template>
-  <nav class="navbar navbar-dark navbar-expand-lg fixed-top portfolio-navbar gradient">
+  <nav class="navbar navbar-dark navbar-expand-lg fixed-top portfolio-navbar gradient" @mouseover="hover = true" @mouseleave="hover = false" :style="navbar">
     <div class="container"><a class="navbar-brand logo" href="/">Raph-folio</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse"
            id="navbarNav">
         <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item" @click="actionHover" @mouseover="actionHover">
+          <li class="nav-item">
             <router-link id="Acceuil" class="nav-link active"
-                         @mouseleave="actionLeavehover()" to="/">Accueil</router-link>
+                         to="/">Accueil</router-link>
 
           </li>
           <li class="nav-item"><router-link class="nav-link active" to="/about">A propos</router-link> </li>
@@ -26,7 +26,9 @@
         data: function(){
           return {
             compeurhover: 0,
-              color: "white"
+              color: "white",
+              scrollPosition : 0,
+              hover:false
           }
         },
         methods : {
@@ -38,11 +40,32 @@
           actionLeavehover(){
             this.color='white';
             console.log="test de leave couleur";
-          }
-        }
+          },
+            handleScroll(){
+                this.scrollPosition = window.scrollY;
+            }
+        },
+        computed : {
+            
+            navbar : function () {
+
+                  return {
+                      "opacity" : ( (this.scrollPosition == 0 || this.hover)?"1":"0" ) ,
+                  }
+                
+            }
+            
+            
+        },
+        created: function () {
+            window.addEventListener('scroll', this.handleScroll);
+        },
     }
 </script>
 
 <style scoped>
 
+  .portfolio-navbar{
+    transition: opacity 0.5s ease;
+  }
 </style>
