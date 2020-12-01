@@ -5,11 +5,7 @@
            id="navbarNav">
         <ul class="nav navbar-nav ml-auto">
           <li class="nav-item">
-            <router-link id="Acceuil" class="nav-link active"
-
-                          to="/">Accueil</router-link>
-
-          </li>
+            <router-link id="Accueil" class="nav-link active" to="/">Accueil</router-link></li>
           <li class="nav-item"><router-link class="nav-link active" to="/about">A propos</router-link> </li>
           <li class="nav-item"><router-link class="nav-link active" to="/work">My Work</router-link> </li>
           <li class="nav-item"><router-link class="nav-link active" to="/shop">Shop</router-link> </li>
@@ -44,7 +40,8 @@
           },
             handleScroll(){
                 this.scrollPosition = window.scrollY;
-            }
+            },
+
         },
         computed : {
             
@@ -61,6 +58,7 @@
         created: function () {
             window.addEventListener('scroll', this.handleScroll);
         },
+
     }
 </script>
 

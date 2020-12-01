@@ -1,7 +1,7 @@
 <template>
   <section class="covers">
     <div class="d-flex d-wrap px-4 w-100" >
-      <div class="col-md-6 col-lg-4 item img-covers">
+      <div class="col-md-6 col-lg-4 item img-covers" @mouseover="hover = true" @mouseleave="hover = false">
         <a>
           <img class="img-fluid image w-100 h-100" src="../assets/imgcover/japan.jpg">
         </a>
@@ -25,8 +25,20 @@
 <script>
 
     export default {
-        name: "PicturesTest",
-        components: {}
+      name: "PicturesTest",
+      components: {},
+      data() {
+        return {
+          hover: false,
+        };
+      },
+      methods: {
+        actionHover: function () {
+          if(this.hover == true) {
+            console.log('test hover');
+          }
+        }
+      }
     }
 </script>
 
