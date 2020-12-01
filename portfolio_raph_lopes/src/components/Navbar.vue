@@ -10,7 +10,7 @@
 
           </li>
           <li class="nav-item"><router-link class="nav-link active" to="/about">A propos</router-link> </li>
-          <li class="nav-item"><router-link class="nav-link active" to="/test">My Work</router-link> </li>
+          <li class="nav-item"><router-link class="nav-link active" to="/work">My Work</router-link> </li>
           <li class="nav-item"><router-link class="nav-link active" to="/shop">Shop</router-link> </li>
           <li class="nav-item"><router-link class="nav-link active" to="/contact">Contact</router-link> </li>
           <!-- <li class="nav-item"><a class="nav-link" href="hire-me.html">Hire me</a></li> -->

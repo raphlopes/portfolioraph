@@ -1,7 +1,7 @@
 <template>
   <footer class = "page-footer">
     <div class="container">
-      <div class="links"><a href="#">About me</a><a href="/contact">Contact me</a></div>
+      <div class="links"><a href="#">About me</a> <a><router-link class="nav-link active" to="/contact">Contact</router-link> </a></div>
       <div class="social-icons">
         <ul class="d-flex justify-content-center">
          <li>

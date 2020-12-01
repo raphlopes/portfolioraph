@@ -5,7 +5,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Contact from '../views/Contact.vue'
-import PicturesTest from '../views/PicturesTest'
+import MyWork from '../views/MyWork'
 import Shop from "../views/Shop"
 
 Vue.use(VueRouter)
@@ -37,18 +37,23 @@ const routes = [
     component: Contact,
     meta : {
       title : "Me contacter"
-    },
+    }
   },
   {
-    path: '/test',
-    name:'test',
-    component: PicturesTest
+    path: '/work',
+    name:'My Work',
+    component: MyWork,
+    meta : {
+      title : "My Work"
+    }
   },
   {
     path: '/shop',
     name:'Shop',
     component: Shop,
-
+    meta : {
+      title : "Shop"
+    }
   }
 ]
 
