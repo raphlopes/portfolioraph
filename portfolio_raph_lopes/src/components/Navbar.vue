@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-dark navbar-expand-lg fixed-top portfolio-navbar gradient" @mouseover="hover = true" @mouseleave="hover = false" :style="navbar">
+  <nav class="navbar navbar-dark navbar-expand-lg fixed-top portfolio-navbar navgradient" @mouseover="hover = true" @mouseleave="hover = false" :style="navbar">
     <div class="container"><a class="navbar-brand logo" href="/">Raph-folio</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse"
            id="navbarNav">
@@ -66,7 +66,20 @@
 
 <style scoped>
 
+  .navgradient{
+    background: #353535;
+  }
   .portfolio-navbar{
     transition: opacity 0.5s ease;
   }
+
+  .social-icons svg{
+    fill : rgb(170 170 170)
+  }
+
+  .social-icons a{
+    border: unset;
+    background-color: unset;
+  }
+
 </style>

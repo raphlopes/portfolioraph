@@ -1,6 +1,6 @@
 <template>
   <section class="covers">
-    <div class="row px-4 w-100" >
+    <div class="d-flex d-wrap px-4 w-100" >
       <div class="col-md-6 col-lg-4 item img-covers">
         <a>
           <img class="img-fluid image w-100 h-100" src="../assets/imgcover/japan.jpg">

@@ -58,14 +58,13 @@ name: "footerbar"
   color: white;
 }
 
-.page-footer svg{
+.social-icons svg{
   fill : rgb(170 170 170)
 }
 
 .social-icons a{
   border: unset;
   background-color: unset;
-
 }
 
 ul {
