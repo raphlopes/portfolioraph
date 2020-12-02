@@ -6,7 +6,7 @@
     <section class="portfolio-block contact">
       <div class="container">
         <div class="heading">
-          <h2>Me contacter</h2>
+          <h2>Contact me</h2>
         </div>
         <form>
           <div class="form-group"><label for="name">Votre nom</label><input class="form-control item" type="text" id="name"></div>

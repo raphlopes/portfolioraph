@@ -4,11 +4,25 @@
     <div class="mt-5 pt-5">
       <router-view/>
     </div>
+
+    <section back-top>
+      <a href="#"> <span class="arrow">↑</span> <span class="preserve-whitespace">Back to Top</span> </a>
+    </section>
+
     <footerbar></footerbar>
   </div>
 </template>
 
 <style lang="scss">
+
+.back-top a {
+  color: white;
+}
+
+.back-top .arrow {
+  display: inline-block;
+  margin-right: 10px;
+}
 
 body {
   background-color: #222222;

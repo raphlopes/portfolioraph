@@ -6,7 +6,7 @@
           <img class="img-fluid image w-100 h-100 " :src="pic.picture" >
           <div v-if="pic.hover" class="position-absolute w-100 h-100 d-flex flex-column justify-content-center text-center top-0">
           
-            <h1 class="">{{pic.textOnHover}}</h1>
+            <h1 class="textcover">{{pic.textOnHover}}</h1>
             
           </div>
         </div>
@@ -47,19 +47,15 @@
                 },
             ]
         };
-      },
-      methods: {
-        actionHover: function () {
-          if(this.hover == true) {
-            console.log('test hover');
-          }
-        }
       }
     }
 </script>
 
 <style scoped>
 
+  .textcover{
+    font-family: sans-serif;
+  }
   .img-covers{
     border: lightgrey;
   }
@@ -74,7 +70,7 @@
   
   .details-on-hover:hover img{
     /*filter: grayscale(70%);*/
-    opacity: 0.5;
+    opacity: 0.2;
   }
   
   .top-0{
