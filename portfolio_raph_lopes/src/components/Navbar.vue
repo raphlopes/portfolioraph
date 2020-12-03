@@ -4,8 +4,9 @@
     <div class="container"><a class="navbar-brand logo" href="/">Raph-folio</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item">
-            <router-link id="Accueil" class="nav-link active" to="/">Accueil</router-link></li>
+          <li class="nav-item" id="accueil1" @mouseover="$event.currentTarget.style.bgcolor = '#0b2e13'">
+            <router-link id="accueil" class="nav-link active" to="/"  >Accueil</router-link>
+          </li>
           <li class="nav-item"><router-link class="nav-link active" to="/about">A propos</router-link> </li>
           <li class="nav-item"><router-link class="nav-link active" to="/work">My Work</router-link> </li>
           <li class="nav-item"><router-link class="nav-link active" to="/shop">Shop</router-link> </li>
@@ -49,7 +50,7 @@
             navbar : function () {
 
                   return {
-                      "opacity" : ( (this.scrollPosition == 0 || this.hover)?"1":"0" ) ,
+                      "opacity" : ( (this.scrollPosition === 0 || this.hover)?"1":"0" ) ,
                   }
                 
             }
@@ -64,6 +65,15 @@
 </script>
 
 <style scoped>
+
+  #accueil{
+    color: #ffffff;
+    transition: color 0.5s ease-in-out;
+  }
+  #accueil:hover{
+    color: #0b2e13;
+
+  }
 
   .navgradient{
     background: #353535;
