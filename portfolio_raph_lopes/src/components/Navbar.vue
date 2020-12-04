@@ -87,11 +87,6 @@
 
 <style scoped lang="scss">
 
-  #accueil{
-    color: #ffffff;
-    transition: color 0.3s ease-in-out;
-  }
-
   .navgradient{
     background: #353535;
     width: 100%;
@@ -133,6 +128,11 @@
   .nav-item:hover{
     a{
       color: white!important;
+    }
+
+    .nav-item{
+      color: #ffffff;
+      transition: color 0.5s ease-in-out;
     }
     
   }
