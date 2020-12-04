@@ -5,7 +5,7 @@
       <router-view/>
     </div>
 
-    <section back-top>
+    <section class="back-top">
       <a href="#"> <span class="arrow">↑</span> <span class="preserve-whitespace">Back to Top</span> </a>
     </section>
 
@@ -16,7 +16,12 @@
 <style lang="scss">
 
 .back-top a {
-  color: white;
+  color: #888;
+  font-family: vcsm;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
 }
 
 .back-top .arrow {
