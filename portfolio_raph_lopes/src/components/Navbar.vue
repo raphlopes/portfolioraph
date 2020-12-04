@@ -1,7 +1,16 @@
 <template>
 
   <nav class="navbar navbar-dark navbar-expand-lg fixed-top portfolio-navbar navgradient" @mouseover="hover = true" @mouseleave="hover = false" :style="navbar">
-    <div class="container"><a class="navbar-brand logo" href="/">Raph-folio</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+    <div class="container">
+      <a class="navbar-brand logo" href="/">Raph-folio</a>
+
+      <button data-toggle="collapse" class="navbar-toggler hamburger hamburger--collapse" data-target="#navbarNav" @click="togglerHamburger" :class="{'is-active': isActive}"   >
+        <span class="sr-only">Toggle navigation</span>
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+      </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav navbar-nav ml-auto">
           <li class="nav-item" id="accueil1" @click="closeNavBar">
@@ -27,14 +36,18 @@
             compeurhover: 0,
               color: "white",
               scrollPosition : 0,
-              hover:false
+              hover:false,
+            isActive: false
           }
         },
         methods : {
 
           closeNavBar : function (){
-            console.log("qq");
             $('#navbarNav').collapse('hide');
+          },
+
+          togglerHamburger : function (){
+            this.isActive = !this.isActive;
           },
 
           actionHover : function(){
@@ -74,12 +87,36 @@
 
 <style scoped lang="scss">
 
-
+  #accueil{
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+  }
 
   .navgradient{
     background: #353535;
     width: 100%;
   }
+
+  .navbar-dark .navbar-toggler {
+    color: #fff;
+    border-color: hsla(0,0%,100%,.1);
+    border: transparent;
+  }
+
+  .navbar-collapse {
+    height: 0vh !important;
+    transition: height 0.5s ease-in-out;
+  }
+
+  .hamburger{
+
+  padding-right: 3%
+
+  }
+  .navbar-collapse.show {
+    height: 100vh !important
+  }
+
   .portfolio-navbar{
     transition: opacity 0.5s ease;
   }
@@ -95,13 +132,9 @@
   
   .nav-item:hover{
     a{
-      color: #0b2e13!important;
+      color: white!important;
     }
-  }
-
-  .nav-item{
-    color: #ffffff;
-    transition: color 0.5s ease-in-out;
+    
   }
 
 </style>

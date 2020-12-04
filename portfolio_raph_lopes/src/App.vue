@@ -9,7 +9,7 @@
       <a href="#"> <span class="arrow">↑</span> <span class="preserve-whitespace">Back to Top</span> </a>
     </section>
     <transition name="fade">
-      <a class="back-top-fixed js-back-to-top back-top-fixed-with-panel" data-hover-hint="backToTop" data-hover-hint-placement="top-start" href="#" v-if="!scrolledToBottom">
+      <a class="back-top-fixed js-back-to-top back-top-fixed-with-panel" data-hover-hint="backToTop" data-hover-hint-placement="top-start" href="#" v-if="!scrolledToBottom && !scrolledToTop">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve" class="icon icon-back-top">
           <g>
             <path d="M13.8,1.3L21.6,9c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.1,0.3,0.1,0.4s0,0.3-0.1,0.4c-0.1,0.1-0.1,0.3-0.3,0.4
@@ -60,7 +60,7 @@ html {
 .back-top-fixed {
   position: fixed;
   z-index: 3;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 60px;
   display: block;
   bottom: 4%;
@@ -70,9 +70,9 @@ html {
 }
 
 .icon-back-top {
-  fill: #fff;
+  fill: gray;
   height: 24px;
-  opacity: 0.8;
+  opacity: 1;
   position: absolute;
   width: 24px;
 }
@@ -150,13 +150,15 @@ body {
         },
       data: function() {
         return{
-          scrolledToBottom: false
+          scrolledToBottom: false,
+          scrolledToTop: true,
         }
       },
       methods: {
         scroll () {
           window.onscroll = () => {
             let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
+            let topOfWindow = window.scrollY == 0
 
             if (bottomOfWindow) {
               this.scrolledToBottom = true
@@ -164,6 +166,14 @@ body {
             }
             else{
               this.scrolledToBottom = false
+            }
+
+            if (topOfWindow) {
+              this.scrolledToTop = true
+              //la sinon ici je fais disparaitre le <a>
+            }
+            else{
+              this.scrolledToTop = false
             }
           }
         }
