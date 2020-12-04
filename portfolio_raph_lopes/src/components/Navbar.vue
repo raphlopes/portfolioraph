@@ -74,10 +74,7 @@
 
 <style scoped lang="scss">
 
-  #accueil{
-    color: #ffffff;
-    transition: color 0.5s ease-in-out;
-  }
+
 
   .navgradient{
     background: #353535;
@@ -100,7 +97,11 @@
     a{
       color: #0b2e13!important;
     }
-    
+  }
+
+  .nav-item{
+    color: #ffffff;
+    transition: color 0.5s ease-in-out;
   }
 
 </style>
