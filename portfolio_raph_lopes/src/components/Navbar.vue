@@ -38,12 +38,12 @@
           },
 
           actionHover : function(){
-            this.color='black';
+            this.color='white';
             console.log('test de couleur');
 
           },
           actionLeavehover : function(){
-            this.color='white';
+            this.color='grey';
             console.log="test de leave couleur";
           },
 
@@ -78,10 +78,10 @@
     color: #ffffff;
     transition: color 0.5s ease-in-out;
   }
-  
 
   .navgradient{
     background: #353535;
+    width: 100%;
   }
   .portfolio-navbar{
     transition: opacity 0.5s ease;
