@@ -4,14 +4,14 @@
     <div class="container"><a class="navbar-brand logo" href="/">Raph-folio</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item" id="accueil1" @mouseover="$event.currentTarget.style.bgcolor = '#0b2e13'">
-            <router-link id="accueil" class="nav-link active" to="/"  @click="closeNavBar" >Accueil</router-link>
+          <li class="nav-item" id="accueil1" @click="closeNavBar">
+            <router-link id="accueil" class="nav-link active" to="/"  >Accueil</router-link>
           </li>
-          <li class="nav-item"><router-link class="nav-link active" to="/about">A propos</router-link> </li>
-          <li class="nav-item"><router-link class="nav-link active" to="/work">My Work</router-link> </li>
-          <li class="nav-item"><router-link class="nav-link active" to="/shop">Shop</router-link> </li>
-          <li class="nav-item"><router-link class="nav-link active" to="/contact">Contact</router-link> </li>
-          <li class="nav-item"><a class="nav-link" href="hire-me.html">Hire me</a></li>
+          <li class="nav-item" @click="closeNavBar"><router-link class="nav-link active" to="/about" >A propos</router-link> </li>
+          <li class="nav-item" @click="closeNavBar"><router-link class="nav-link active" to="/work">My Work</router-link> </li>
+          <li class="nav-item" @click="closeNavBar"><router-link class="nav-link active" to="/shop">Shop</router-link> </li>
+          <li class="nav-item" @click="closeNavBar"><router-link class="nav-link active" to="/contact">Contact</router-link> </li>
+          <li class="nav-item" @click="closeNavBar"><a class="nav-link" href="hire-me.html">Hire me</a></li>
         </ul>
       </div>
     </div>
@@ -33,7 +33,8 @@
         methods : {
 
           closeNavBar : function (){
-            '#navbarNav'.collapse('hide');
+            console.log("qq");
+            $('#navbarNav').collapse('hide');
           },
 
           actionHover : function(){
@@ -71,16 +72,13 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
   #accueil{
     color: #ffffff;
     transition: color 0.5s ease-in-out;
   }
-  #accueil:hover{
-    color: #0b2e13;
-
-  }
+  
 
   .navgradient{
     background: #353535;
@@ -96,6 +94,13 @@
   .social-icons a{
     border: unset;
     background-color: unset;
+  }
+  
+  .nav-item:hover{
+    a{
+      color: #0b2e13!important;
+    }
+    
   }
 
 </style>

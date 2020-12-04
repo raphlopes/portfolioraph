@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex flex-wrap px-4 w-100" :key="category">
     
-      <div :class="classList"  v-for="(pic) in selectedPictures" :key="pic">
+      <div :class="classList"  v-for="(pic,index) in selectedPictures" :key="index">
     
     
         <picture-item :pic="pic" @selectCategory="$emit('selectCategory',pic.category)"></picture-item>
