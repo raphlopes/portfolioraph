@@ -4,14 +4,14 @@
   
     <div class="w-100 d-flex justify-content-center " >
     
-      <a v-for="(index) in 3" :key="index" @click="category = index" class="px-4 text-white pb-3 pointer">
-        category {{index}}
+      <a  @click="category = 0" class="px-4 text-white pb-3 pointer" v-if="category!=0">
+       retour
       </a>
     
     </div>
     
     
-    <pictures-selector :category="category"></pictures-selector>
+    <pictures-selector :category="category" @selectCategory="category=$event"></pictures-selector>
   </section>
 
 </template>
@@ -27,7 +27,7 @@
         return {
           
             hover: false,
-            category:-1
+            category:0
             
         };
       }

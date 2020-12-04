@@ -4,7 +4,7 @@
       <div :class="classList"  v-for="(pic) in selectedPictures" :key="pic">
     
     
-        <picture-item :pic="pic"></picture-item>
+        <picture-item :pic="pic" @selectCategory="$emit('selectCategory',pic.category)"></picture-item>
   
   
       </div>
@@ -58,21 +58,24 @@
                         textOnHover : "Japon",
                         hover : false,
                         link : "",
-                        category : 1
+                        category : 1,
+                        main: true
                     },
                     {
                         picture : Picture2,
                         textOnHover : "Grece",
                         hover : false,
 
-                        category : 2
+                        category : 2,
+                        main : true
                     },
                     {
                         picture : Picture3,
                         textOnHover : "Nuit",
                         hover : false,
 
-                        category : 3
+                        category : 3,
+                        main : true
                     },
                     {
                         picture : Nature1,
@@ -117,7 +120,10 @@
             selectedPictures : function () {
 
                 let pictures = this.pictures;
-                if(this.category != -1 ){
+                if(this.category == 0){
+                    pictures = pictures.filter(pic => pic.main == true)
+                }
+                else if(this.category != -1 ){
                     pictures = pictures.filter(pic => pic.category == this.category)
                 }
                 
