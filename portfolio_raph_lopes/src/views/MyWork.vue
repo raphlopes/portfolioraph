@@ -5,7 +5,7 @@
     <div class="w-100 d-flex justify-content-center " >
     
       <a  @click="category = 0" class="px-4 text-white pb-3 pointer" v-if="category!=0">
-       retour
+       Back
       </a>
     
     </div>

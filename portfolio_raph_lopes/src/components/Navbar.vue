@@ -5,7 +5,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav navbar-nav ml-auto">
           <li class="nav-item" id="accueil1" @mouseover="$event.currentTarget.style.bgcolor = '#0b2e13'">
-            <router-link id="accueil" class="nav-link active" to="/"  >Accueil</router-link>
+            <router-link id="accueil" class="nav-link active" to="/"  @click="closeNavBar" >Accueil</router-link>
           </li>
           <li class="nav-item"><router-link class="nav-link active" to="/about">A propos</router-link> </li>
           <li class="nav-item"><router-link class="nav-link active" to="/work">My Work</router-link> </li>
@@ -31,6 +31,11 @@
           }
         },
         methods : {
+
+          closeNavBar : function (){
+            '#navbarNav'.collapse('hide');
+          },
+
           actionHover : function(){
             this.color='black';
             console.log('test de couleur');
@@ -40,9 +45,11 @@
             this.color='white';
             console.log="test de leave couleur";
           },
-            handleScroll(){
-                this.scrollPosition = window.scrollY;
-            },
+
+          handleScroll(){
+             this.scrollPosition = window.scrollY;
+          },
+
 
         },
         computed : {
@@ -59,9 +66,9 @@
         },
         created: function () {
             window.addEventListener('scroll', this.handleScroll);
-        },
-
+        }
     }
+
 </script>
 
 <style scoped>
