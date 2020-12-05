@@ -1,7 +1,7 @@
 <template>
   <footer class = "page-footer">
     <div class="container">
-      <div class="links"><a href="#">About me</a> <a><router-link class="nav-link active" to="/contact">Contact</router-link> </a></div>
+      <div class="links"><router-link class="nav-link active" to="/about" >About me</router-link> <a><router-link class="nav-link active" to="/contact">Contact</router-link> </a></div>
       <div class="social-icons">
           <a href="https://instagram.com/raph_lop" target="_blank">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">

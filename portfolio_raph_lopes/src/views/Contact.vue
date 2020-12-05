@@ -6,53 +6,89 @@
     <section class="portfolio-block contact">
       <div class="container">
         <div class="heading">
-          <h2>Contact me</h2>
+          <h1> Contact Me </h1>
         </div>
-        <form method="POST" action="https://formspree.io/f/xgepnweq">
-          <div class="form-group"><label for="name">Votre nom</label><input class="form-control item" type="text" name="name" id="name"></div>
-          <div class="form-group"><label for="subject">Sujet</label><input class="form-control item" type="text" name="subject" id="subject"></div>
-          <div class="form-group"><label for="email">Email</label><input class="form-control item" type="email" name="_replyto" id="email"></div>
-          <div class="form-group"><label for="message">Message</label><textarea class="form-control item" id="message" name="message"></textarea></div>
-          <div class="form-group"><button @click="sendEmail" id="sendEmail" class="btn btn-primary btn-block btn-lg" type="submit">Envoi</button></div>
+        <form class="formmail" method="get" action="formulaire-send-email.php" >
+          <div class="form-group">
+            <label class="espacing" for="name">Votre nom</label>
+            <input class="form-control item" type="text" id="name"></div>
+          <div class="form-group"><label class="espacing" for="subject">Sujet</label><input class="form-control item" type="text" id="subject"></div>
+          <div class="form-group"><label class="espacing" for="email">Email</label><input class="form-control item" type="email" id="email"></div>
+          <div class="form-group"><label class="espacing" for="message">Message</label><textarea class="form-control item" id="message"></textarea></div>
+
+          <div class="form-group espacing"><button onclick="sendEmail()" class="boutton-send" type="submit">Submit</button></div>
+          <div class="notes">  <p>We are using <a target="_blank" href="http://formspree.io">FormSpree</a> for this form.
+            Please consult their privacy policy if you have any questions regarding this matter.</p>
+          </div>
         </form>
       </div>
     </section>
   </main>
 </template>
 
-
-
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
-import axios from "axios";
-
   export default {
     name: "Contact",
-    methods: {
+    methods : {
       sendEmail: function () {
-        var message = "";
-        $("#sendMessage").on("click", function () {
-          message = $("#contactform").serialize();
-          $.ajax({
-            url: "//formspree.io/dynamicrealities@gmail.com",
-            method: "POST",
-            data: {message: message},
-            dataType: "json"
-          });
-          alert('Thanks for the email, we\'ll be in touch promptly.');
-          return false;
-        });
+        Email.send({
+          Host: "smtp.gmail.com",
+          Username: "gohubb2@gmail.com",
+          Password: "AsErftg,XOLJ74",
+          To: 'lopesraphy94@gmail.com',
+          From: "gohubb2@gmail.com",
+          Subject: "test d'email",
+          Body: "wesh bonjour test d'email",
+        }).then(
+            message => alert("mail sent successfully")
+        );
 
       }
-    },
-    mounted(){
-      axios.post("https://formspree.io/f/xgepnweq",{} ) //https://github.com/axios/axios
     }
   }
-
 
 
 </script>
 
 <style scoped>
 
+.boutton-send{
+
+  padding: .5rem 1.2rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 10%;
+
+  color: whitesmoke;
+  background-color: #222222;
+  border: none;
+
+
+
+  width: auto;
+
+}
+
+.heading{
+  color:whitesmoke;
+}
+.formmail{
+  background-color: rgba(53,53,53,1);
+}
+.espacing{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  font-size: 20px;
+  color: whitesmoke;
+}
+
+.notes{
+  color: white;
+  padding-top: 5%;
+}
 </style>
