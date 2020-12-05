@@ -14,7 +14,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav navbar-nav ml-auto">
           <li class="nav-item" id="accueil1" @click="closeNavBar">
-            <router-link id="accueil" class="nav-link active" to="/"  >Accueil</router-link>
+            <router-link id="accueil" class="nav-link active" to="/">Accueil</router-link>
           </li>
           <li class="nav-item" @click="closeNavBar"><router-link class="nav-link active" to="/about" >A propos</router-link> </li>
           <li class="nav-item" @click="closeNavBar"><router-link class="nav-link active" to="/work">My Work</router-link> </li>

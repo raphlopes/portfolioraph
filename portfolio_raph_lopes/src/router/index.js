@@ -15,8 +15,12 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path:"*",
-    redirect:"/",
+    path: "*",
+    redirect: "/",
+  },
+  {
+    path: "/formulaire-send-email.php?",
+    redirect: "src/views/formulaire-send-email.php",
   },
   {
     path: '/',

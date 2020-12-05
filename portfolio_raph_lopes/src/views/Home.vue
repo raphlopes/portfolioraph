@@ -8,6 +8,8 @@
 <script>
 // @ is an alias to /src
 
+//console.log("test depuis home");
+
 import PicturesSelector from "../components/PicturesLayout/PicturesSelector";
 export default {
     components: {PicturesSelector}
