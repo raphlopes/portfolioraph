@@ -46,8 +46,10 @@ name: "Shop"
 
 <style scoped>
 
+
 .tuile-shop{
-  background-color: whitesmoke;
+  color: white;
+  background-color: grey;
   border-radius: 5%;
 }
 
