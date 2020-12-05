@@ -15,7 +15,8 @@
           <div class="form-group"><label class="espacing" for="subject">Sujet</label><input class="form-control item" type="text" id="subject"></div>
           <div class="form-group"><label class="espacing" for="email">Email</label><input class="form-control item" type="email" id="email"></div>
           <div class="form-group"><label class="espacing" for="message">Message</label><textarea class="form-control item" id="message"></textarea></div>
-          <div class="form-group"><button onclick="sendEmail()" class="btn btn-primary btn-block btn-lg" type="submit">Send</button></div>
+
+          <div class="form-group espacing"><button onclick="sendEmail()" class="boutton-send" type="submit">Submit</button></div>
           <div class="notes">  <p>We are using <a target="_blank" href="http://formspree.io">FormSpree</a> for this form.
             Please consult their privacy policy if you have any questions regarding this matter.</p>
           </div>
@@ -52,6 +53,23 @@
 
 <style scoped>
 
+.boutton-send{
+
+  padding: .5rem 1.2rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 10%;
+
+  color: whitesmoke;
+  background-color: #222222;
+  border: none;
+
+
+
+  width: auto;
+
+}
+
 .heading{
   color:whitesmoke;
 }
@@ -59,6 +77,10 @@
   background-color: rgba(53,53,53,1);
 }
 .espacing{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   padding-top: 1.5%;
   padding-bottom: 1.5%;
   font-size: 20px;
