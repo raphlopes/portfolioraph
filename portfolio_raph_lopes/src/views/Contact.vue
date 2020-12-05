@@ -8,15 +8,14 @@
         <div class="heading">
           <h1> Contact Me </h1>
         </div>
-        <form class="formmail" method="get" action="formulaire-send-email.php" >
-          <div class="form-group">
-            <label class="espacing" for="name">Votre nom</label>
-            <input class="form-control item" type="text" id="name"></div>
-          <div class="form-group"><label class="espacing" for="subject">Sujet</label><input class="form-control item" type="text" id="subject"></div>
-          <div class="form-group"><label class="espacing" for="email">Email</label><input class="form-control item" type="email" id="email"></div>
-          <div class="form-group"><label class="espacing" for="message">Message</label><textarea class="form-control item" id="message"></textarea></div>
+        <form class="formmail" method="POST" action="https://formspree.io/f/xgepnweq" >
+          <div class="form-group"><label class="espacing" for="name">Votre nom</label><input class="form-control item" name="name" type="text" id="name"></div>
+          <div class="form-group"><label class="espacing" for="subject">Sujet</label><input class="form-control item" name="subject" type="text" id="subject"></div>
+          <div class="form-group"><label class="espacing" for="email">Email</label><input class="form-control item" name="_replyto" type="email" id="email"></div>
+          <div class="form-group"><label class="espacing" for="message">Message</label><textarea class="form-control item" name="message" id="message" ></textarea></div>
 
-          <div class="form-group espacing"><button onclick="sendEmail()" class="boutton-send" type="submit">Submit</button></div>
+          <div class="form-group espacing"><button onclick="sendEmail()" class="boutton-send"  id="sendEmail" type="submit">Submit</button></div>
+          //@click="sendEmailAjax"
           <div class="notes">  <p>We are using <a target="_blank" href="http://formspree.io">FormSpree</a> for this form.
             Please consult their privacy policy if you have any questions regarding this matter.</p>
           </div>
@@ -26,8 +25,10 @@
   </main>
 </template>
 
-<script src="https://smtpjs.com/v3/smtp.js"></script>
+
 <script>
+
+import axios from "axios";
   export default {
     name: "Contact",
     methods : {
@@ -44,7 +45,24 @@
             message => alert("mail sent successfully")
         );
 
+      },
+      sendEmailAjax: function () {
+        var message = "";
+        $("#sendMessage").on("click", function () {
+          message = $("#contactform").serialize();
+          $.ajax({
+            url: "//formspree.io/dynamicrealities@gmail.com",
+            method: "POST",
+            data: {message: message},
+            dataType: "json"
+          });
+          alert('Thanks for the email, we\'ll be in touch promptly.');
+          return false;
+        });
       }
+    },
+    mounted(){
+      axios.post("https://formspree.io/f/xgepnweq",{} ) //https://github.com/axios/axios
     }
   }
 
