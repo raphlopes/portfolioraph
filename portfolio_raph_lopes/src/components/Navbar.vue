@@ -188,9 +188,12 @@
       width: 24px;
     }
   }
-  
-  .social-icons a {
-    color: #aaa;
+
+  .social-icons li{
+    list-style-type: none;
+  }
+
+  .social-icons a{
     border: unset;
     background-color: unset;
   }
