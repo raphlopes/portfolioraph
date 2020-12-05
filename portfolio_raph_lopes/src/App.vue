@@ -2,7 +2,10 @@
   <div id="app">
     <navbar></navbar>
     <div class="mt-5 pt-5">
-      <router-view/>
+      <transition name="fade-custom" mode="out-in">
+  
+        <router-view/>
+      </transition>
     </div>
 
     <section class="back-top">
@@ -30,7 +33,20 @@
 </template>
 
 <style lang="scss">
-
+  
+  .fade-custom-enter-active,
+  .fade-custom-leave-active {
+    transition: opacity 0.3s;
+  }
+  
+  .fade-custom-enter,
+  .fade-custom-leave-to
+    /* .fade-leave-active in <2.1.8 */
+  
+  {
+    opacity: 0;
+  }
+  
 html {
   scroll-behavior: smooth;
 }
