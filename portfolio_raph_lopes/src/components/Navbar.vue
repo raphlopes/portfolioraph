@@ -156,6 +156,10 @@
     fill : rgb(170 170 170)
   }
 
+  .social-icons li{
+    list-style-type: none;
+  }
+
   .social-icons a{
     border: unset;
     background-color: unset;
@@ -170,9 +174,6 @@
       color: #ffffff;
       transition: color 0.5s ease-in-out;
     }
-  ul{
-      list-style-type: none;
-  }
 
   }
 
