@@ -8,7 +8,7 @@
       </transition>
     </div>
 
-    <section class="back-top">
+    <section class="back-top position-absolute" style="bottom: 0">
       <a href="#"> <span class="arrow">↑</span> <span class="preserve-whitespace">Back to Top</span> </a>
     </section>
     <transition name="fade">

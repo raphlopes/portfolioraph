@@ -786,8 +786,10 @@
     display: none!important;
   }
   
-  
- 
+  .vue-masonry-gallery-scroll{
+    overflow-y: unset!important;
+    overflow-x: unset!important;
+  }
   
 
 </style>

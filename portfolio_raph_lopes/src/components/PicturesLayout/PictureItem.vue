@@ -31,7 +31,6 @@
                 
                 let ref = this.$refs.picture;
                 
-                console.log(ref.naturalWidth + " "+ ref.naturalHeight + this.pic);
             }
             
         }
