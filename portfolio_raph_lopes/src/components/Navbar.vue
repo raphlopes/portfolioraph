@@ -39,14 +39,14 @@
           </ul>
   
           <div class="social-icons d-flex justify-content-lg-end justify-content-center col-lg-2 col-12">
-            <a href="https://instagram.com/raph_lop" target="_blank" class="px-2 my-auto ">
+            <a href="https://instagram.com/raph_lop" target="_blank" class="px-2 ">
       
               <instagramr-icon></instagramr-icon>
             </a>
-            <a href="https://twitter.com/Nefaaarx" target="_blank" class="px-2 my-auto ">
+            <a href="https://twitter.com/Nefaaarx" target="_blank" class="px-2  ">
               <twitter-icon></twitter-icon>
             </a>
-            <a href="mailto:lopesraphael94@gmail.com" class="px-2 my-auto ">
+            <a href="mailto:lopesraphael94@gmail.com" class="px-2  ">
               <mail-icon></mail-icon>
     
             </a>
@@ -112,7 +112,7 @@
             navbarCustom : function(){
             
                 return{
-                    height : (this.isActiveReal? this.windowHeight+"px":"0vh")+"!important",
+                    height : (this.isActiveReal? (this.windowHeight+this.$refs.navbar.clientHeight)+"px":"0vh")+"!important",
                     display: "block",
                     "padding-bottom" : (this.isMounted && this.isActiveReal?this.$refs.navbar.clientHeight:0)+"px"
                 }
