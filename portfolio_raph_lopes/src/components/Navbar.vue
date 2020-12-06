@@ -5,7 +5,7 @@
     <div class="d-flex col-12 col-lg-2 justify-content-between " ref="navbar">
       <router-link class="navbar-brand logo" to="/">Raph-folio</router-link>
       
-      <button data-toggle="collapse" class="navbar-toggler hamburger hamburger--collapse py-0" data-target="#navbarNav"
+      <button class="navbar-toggler hamburger hamburger--collapse py-0"
               @click="togglerHamburger" :class="{'is-active': isActive}">
         <span class="sr-only">Toggle navigation</span>
         <span class="hamburger-box d-flex d-lg-none flex-column justify-content-center">
@@ -14,41 +14,47 @@
       </button>
     
     </div>
-    <div class="collapse navbar-collapse d-lg-flex w-100 " id="navbarNav" :style="customPadding">
-      <ul class="nav navbar-nav w-100 justify-content-lg-center d-flex flex-lg-row flex-column justify-content-around"  >
-        <li class="nav-item" @click="closeNavBar">
-          <router-link id="accueil" class="nav-link" to="/">Accueil</router-link>
-        </li>
-        <li class="nav-item" @click="closeNavBar">
-          <router-link class="nav-link"  to="/about">About me</router-link>
-        </li>
-        <li class="nav-item" @click="closeNavBar">
-          <router-link class="nav-link" to="/work">My Work</router-link>
-        </li>
-        <li class="nav-item" @click="closeNavBar">
-          <router-link class="nav-link"  to="/shop">Shop</router-link>
-        </li>
-        <li class="nav-item" @click="closeNavBar">
-          <router-link class="nav-link" to="/contact">Contact</router-link>
-        </li>
-        <!-- <li class="nav-item" @click="closeNavBar"><a class="nav-link" href="hire-me.html">Hire me</a></li> -->
+    <div class="collapse navbar-collapse d-lg-flex w-100 " id="navbarNav" :style="navbarCustom" >
+      <transition name="fade-nav" >
       
-      </ul>
+        <div v-if="isActiveReal" class="h-100">
+          <ul class="nav navbar-nav w-100 flex-lg-row flex-column justify-content-center"   >
+            <li class="nav-item" @click="closeNavBar">
+              <router-link id="accueil" class="nav-link" to="/">Accueil</router-link>
+            </li>
+            <li class="nav-item" @click="closeNavBar">
+              <router-link class="nav-link"  to="/about">About me</router-link>
+            </li>
+            <li class="nav-item" @click="closeNavBar">
+              <router-link class="nav-link" to="/work">My Work</router-link>
+            </li>
+            <li class="nav-item" @click="closeNavBar">
+              <router-link class="nav-link"  to="/shop">Shop</router-link>
+            </li>
+            <li class="nav-item" @click="closeNavBar">
+              <router-link class="nav-link" to="/contact">Contact</router-link>
+            </li>
+            <!-- <li class="nav-item" @click="closeNavBar"><a class="nav-link" href="hire-me.html">Hire me</a></li> -->
+  
+          </ul>
+  
+          <div class="social-icons d-flex justify-content-lg-end justify-content-center col-lg-2 col-12">
+            <a href="https://instagram.com/raph_lop" target="_blank" class="px-2 my-auto ">
       
-      <div class="social-icons d-flex justify-content-lg-end justify-content-center col-lg-2 col-12 ">
-        <a href="https://instagram.com/raph_lop" target="_blank" class="px-2 my-auto ">
-          
-          <instagramr-icon></instagramr-icon>
-        </a>
-        <a href="https://twitter.com/Nefaaarx" target="_blank" class="px-2 my-auto ">
-          <twitter-icon></twitter-icon>
-        </a>
-        <a href="mailto:lopesraphael94@gmail.com" class="px-2 my-auto ">
-          <mail-icon></mail-icon>
-        
-        </a>
-      </div>
+              <instagramr-icon></instagramr-icon>
+            </a>
+            <a href="https://twitter.com/Nefaaarx" target="_blank" class="px-2 my-auto ">
+              <twitter-icon></twitter-icon>
+            </a>
+            <a href="mailto:lopesraphael94@gmail.com" class="px-2 my-auto ">
+              <mail-icon></mail-icon>
     
+            </a>
+          </div>
+        </div>
+      
+      
+      </transition>
     </div>
   </nav>
 
@@ -58,7 +64,8 @@
     import TwitterIcon from "@/assets/icon/twitter.svg"
     import MailIcon from "@/assets/icon/mail.svg"
     import InstagramrIcon from "@/assets/icon/instagram.svg"
-
+    
+    // Then we set the value in the --vh custom property to the root of the document
     export default {
         name: "Navbar",
         data: function () {
@@ -66,7 +73,9 @@
                 scrollPosition: 0,
                 hover: false,
                 isActive: false,
-                isMounted : false
+                isMounted : false,
+                windowWidth : 0,
+                windowHeight : 0
             }
         },
         components: {
@@ -78,7 +87,7 @@
         methods: {
 
             closeNavBar: function () {
-                $('#navbarNav').collapse('hide');
+                this.isActive = false
             },
 
             togglerHamburger: function () {
@@ -100,17 +109,36 @@
                 }
 
             },
-            customPadding: function () {
+            navbarCustom : function(){
+            
+                return{
+                    height : (this.isActiveReal? this.windowHeight+"px":"0vh")+"!important",
+                    display: "block",
+                    "padding-bottom" : (this.isMounted && this.isActiveReal?this.$refs.navbar.clientHeight:0)+"px"
+                }
+            },
+            isActiveReal : function () {
 
                 
-                return { "padding-bottom" : (this.isMounted && this.isActive?this.$refs.navbar.clientHeight:0)+"px"}
-                
+                if(this.windowWidth>992){
+                    return true;
+                }else{
+                    return this.isActive;
+                }
             }
 
 
         },
         mounted() {
             this.isMounted = true;
+            this.windowWidth = window.innerWidth;
+
+            this.windowHeight= window.innerHeight;
+            this.isActive = this.isActiveReal();
+            window.addEventListener('resize', () => {
+                this.windowWidth = window.innerWidth
+                this.windowHeight= window.innerHeight
+            })
         },
         created: function () {
             window.addEventListener('scroll', this.handleScroll);
@@ -143,7 +171,7 @@
   }
   
   .navbar-collapse {
-    height: 0vh !important;
+    
     transition: height 0.5s ease-in-out;
   }
   
@@ -153,37 +181,21 @@
     
   }
   
-  .navbar-collapse.show {
-    height: 100vh !important;
-    
+  
+  .navbar-collapse {
     font-size: x-large;
     
     .navbar-nav {
-      height: 90%;
+      height: 80%;
     }
     
     .social-icons {
-      height: 10%;
-      
+      height: 20%;
       svg {
         height: 30px;
         width: 30px;
         margin: 0 14px;
       }
-    }
-  }
-  
-  .navbar-collapse.collapsing {
-    padding: 0!important;
-    font-size: x-large;
-    
-    .navbar-nav {
-      height: 90%;
-    }
-    
-    .social-icons {
-      height: 10%;
-      
     }
   }
   
@@ -234,6 +246,20 @@
   
   ul {
     list-style-type: none;
+  }
+
+  /* Les animations d'entrée (« enter ») et de sortie (« leave »)  */
+  /* peuvent utiliser différentes fonctions de durée et de temps.  */
+  .fade-nav-enter-active {
+    transition: all .3s 0.5s ease;
+  }
+  .fade-nav-leave-active {
+    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .fade-nav-enter, .fade-nav-leave-to
+    /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateY(-10px);
+    opacity: 0;
   }
 
 </style>
