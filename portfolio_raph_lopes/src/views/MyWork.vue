@@ -1,6 +1,6 @@
 <template>
   <section class="covers">
-    <div class="w-100 d-flex justify-content-center" >
+    <div class="w-100 d-flex justify-content-center espacing" >
 
       <a  @click="category = 0" class="px-4 text-white pb-3 pointer ft1" v-if="category!==0">
        Back
@@ -32,11 +32,14 @@
 
 <style scoped>
 
+  .espacing{
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+  }
   .ft1{
-    padding-top: 3%;
-    padding-bottom: 3%;
-    font-family: vcsm,serif;
-    font-size: 18px;
+
+    font-family: vcsm;
+    font-size: 1.5em;
     font-style: normal;
     font-weight: 400;
     line-height: 18px;

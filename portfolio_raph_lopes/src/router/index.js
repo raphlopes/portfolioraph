@@ -35,7 +35,7 @@ const routes = [
     name: 'About',
     component: About,
     meta : {
-      title : "A propos"
+      title : "About Me"
     }
   },
   {
@@ -43,7 +43,7 @@ const routes = [
     name:'Contact',
     component: Contact,
     meta : {
-      title : "Me contacter"
+      title : "Contact Me"
     }
   },
   {

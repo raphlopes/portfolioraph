@@ -9,13 +9,12 @@
           <h1> Contact Me </h1>
         </div>
         <form class="formmail" method="POST" action="https://formspree.io/f/xgepnweq" >
-          <div class="form-group"><label class="espacing" for="name">Votre nom</label><input class="form-control item" name="name" type="text" id="name"></div>
-          <div class="form-group"><label class="espacing" for="subject">Sujet</label><input class="form-control item" name="subject" type="text" id="subject"></div>
-          <div class="form-group"><label class="espacing" for="email">Email</label><input class="form-control item" name="_replyto" type="email" id="email"></div>
+          <div class="form-group"><label class="espacing" for="name">Your name</label><input class="form-control item" name="name" type="text" id="name"></div>
+          <div class="form-group"><label class="espacing" for="subject">Subject</label><input class="form-control item" name="subject" type="text" id="subject"></div>
+          <div class="form-group"><label class="espacing" for="email">Mail</label><input class="form-control item" name="_replyto" type="email" id="email"></div>
           <div class="form-group"><label class="espacing" for="message">Message</label><textarea class="form-control item" name="message" id="message" ></textarea></div>
 
           <div class="form-group espacing"><button onclick="sendEmail()" class="boutton-send"  id="sendEmail" type="submit">Submit</button></div>
-          //@click="sendEmailAjax"
           <div class="notes">  <p>We are using <a target="_blank" href="http://formspree.io">FormSpree</a> for this form.
             Please consult their privacy policy if you have any questions regarding this matter.</p>
           </div>
@@ -32,21 +31,7 @@ import axios from "axios";
   export default {
     name: "Contact",
     methods : {
-      sendEmail: function () {
-        Email.send({
-          Host: "smtp.gmail.com",
-          Username: "gohubb2@gmail.com",
-          Password: "AsErftg,XOLJ74",
-          To: 'lopesraphy94@gmail.com',
-          From: "gohubb2@gmail.com",
-          Subject: "test d'email",
-          Body: "wesh bonjour test d'email",
-        }).then(
-            message => alert("mail sent successfully")
-        );
-
-      },
-      sendEmailAjax: function () {
+    /* sendEmailAjax: function () {
         var message = "";
         $("#sendMessage").on("click", function () {
           message = $("#contactform").serialize();
@@ -59,7 +44,7 @@ import axios from "axios";
           alert('Thanks for the email, we\'ll be in touch promptly.');
           return false;
         });
-      }
+      } */
     },
     mounted(){
       axios.post("https://formspree.io/f/xgepnweq",{} ) //https://github.com/axios/axios
@@ -71,7 +56,7 @@ import axios from "axios";
 
 <style scoped>
 
-.boutton-send{
+.boutton-send {
 
   padding: .5rem 1.2rem;
   font-size: 1.25rem;
@@ -81,11 +66,7 @@ import axios from "axios";
   color: whitesmoke;
   background-color: #222222;
   border: none;
-
-
-
   width: auto;
-
 }
 
 .heading{
@@ -107,6 +88,6 @@ import axios from "axios";
 
 .notes{
   color: white;
-  padding-top: 5%;
+  padding-top: 2%;
 }
 </style>
