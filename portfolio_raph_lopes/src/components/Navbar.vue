@@ -142,7 +142,10 @@
 
             this.windowHeight= window.innerHeight;
             this.isActive = false;
-            
+            window.addEventListener('resize', () => {
+                this.windowWidth = window.innerWidth
+                this.windowHeight= window.innerHeight
+            })
         },
         created: function () {
             window.addEventListener('scroll', this.handleScroll);
