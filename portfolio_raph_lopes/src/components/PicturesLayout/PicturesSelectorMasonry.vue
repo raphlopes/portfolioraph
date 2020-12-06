@@ -46,6 +46,10 @@
   import PicJapan30 from "@/assets/img/japan/PicJapan (30).jpg"
   import PicJapan31 from "@/assets/img/japan/PicJapan (31).jpg"
   import PicJapan32 from "@/assets/img/japan/PicJapan (32).jpg"
+  import PicJapan33 from "@/assets/img/japan/PicJapan (33).jpg"
+  import PicJapan34 from "@/assets/img/japan/PicJapan (34).jpg"
+  import PicJapan35 from "@/assets/img/japan/PicJapan (35).jpg"
+  import PicJapan36 from "@/assets/img/japan/PicJapan (36).jpg"
 
   import PicPortugal1 from "@/assets/img/portugal/PicPortugal (1).jpg"
   import PicPortugal2 from "@/assets/img/portugal/PicPortugal (2).jpg"
@@ -400,6 +404,32 @@
                         category : 1,
                         main : false
                     },
+
+                    {
+                      src : PicJapan33,
+                      textOnHover : "Sunset in Akihabara",
+                      hover : false,
+
+                      category : 1,
+                      main : false
+                    },
+                    {
+                      src : PicJapan34,
+                      textOnHover : "Vaporwave Kyoto",
+                      hover : false,
+
+                      category : 1,
+                      main : false
+                    },
+                    {
+                      src : PicJapan35,
+                      textOnHover : "Autumn in Kyoto",
+                      hover : false,
+
+                      category : 1,
+                      main : false
+                    },
+
                     {
                       src : PicPortugal1,
                       textOnHover : "Pastel City",

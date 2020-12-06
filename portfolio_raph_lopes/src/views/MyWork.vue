@@ -9,6 +9,7 @@
     </div>
     <pictures-selector :category="category" @selectCategory="category=$event" v-if="category==0"></pictures-selector>
     <pictures-selector-masonry :category="category" @selectCategory="category=$event" v-else></pictures-selector-masonry>
+
   </section>
 
 </template>

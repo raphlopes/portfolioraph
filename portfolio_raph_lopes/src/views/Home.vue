@@ -2,6 +2,8 @@
   <div class="home">
 
     <pictures-selector class="mt-5" :random="true" :max-picture-number="9"></pictures-selector>
+    <!-- <pictures-selector-masonry class="mt-5" :random="true" :max-picture-number="9"></pictures-selector-masonry> -->
+
   </div>
 </template>
 
@@ -11,8 +13,17 @@
 //console.log("test depuis home");
 
 import PicturesSelector from "../components/PicturesLayout/PicturesSelector";
+import PicturesSelectorMasonry from "../components/PicturesLayout/PicturesSelectorMasonry";
 export default {
-    components: {PicturesSelector}
+  components: {PicturesSelectorMasonry,PicturesSelector},
+  data() {
+    return {
+
+      hover: false,
+      category: 0
+
+    };
+  }
 }
 
 

@@ -190,7 +190,7 @@
     
   }
 
-  .portfolio-navbar .navbar-nav .nav-link {
+  .portfolio-navbar .navbar-nav .nav-link a{
     font-weight: normal;
     font-size: 120%;
   }

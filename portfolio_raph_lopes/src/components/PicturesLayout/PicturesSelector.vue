@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-wrap px-4 w-100" :key="category">
+  <div class="d-flex flex-wrap px-4 w-100 mansonry-with-flex" :key="category">
     
       <div :class="classList"  v-for="(pic,index) in selectedPictures" :key="index">
     
@@ -52,6 +52,11 @@
   import PicJapan30 from "@/assets/img/japan/PicJapan (30).jpg"
   import PicJapan31 from "@/assets/img/japan/PicJapan (31).jpg"
   import PicJapan32 from "@/assets/img/japan/PicJapan (32).jpg"
+  import PicJapan33 from "@/assets/img/japan/PicJapan (33).jpg"
+  import PicJapan34 from "@/assets/img/japan/PicJapan (34).jpg"
+  import PicJapan35 from "@/assets/img/japan/PicJapan (35).jpg"
+  import PicJapan36 from "@/assets/img/japan/PicJapan (36).jpg"
+
 
   import PicPortugal1 from "@/assets/img/portugal/PicPortugal (1).jpg"
   import PicPortugal2 from "@/assets/img/portugal/PicPortugal (2).jpg"
@@ -193,7 +198,15 @@
                         main : false
                     },
                     {
-                        picture : PicJapan7,
+                      picture : PicJapan7,
+                      textOnHover : "Osaka after Dark",
+                      hover : false,
+
+                      category : 1,
+                      main : false
+                    },
+                    {
+                        picture : PicJapan36,
                         textOnHover : "Kyoto in Anime",
                         hover : false,
 
@@ -401,6 +414,31 @@
                         main : false
                     },
                     {
+                      picture : PicJapan33,
+                      textOnHover : "Sunset in Akihabara",
+                      hover : false,
+
+                      category : 1,
+                      main : false
+                    },
+                    {
+                      picture : PicJapan34,
+                      textOnHover : "Vaporwave Kyoto",
+                      hover : false,
+
+                      category : 1,
+                      main : false
+                    },
+                    {
+                      picture : PicJapan35,
+                      textOnHover : "Autumn in Kyoto",
+                      hover : false,
+
+                      category : 1,
+                      main : false
+                    },
+
+                  {
                       picture : PicPortugal1,
                       textOnHover : "Pastel City",
                       hover : false,
@@ -741,7 +779,5 @@
   .img-covers{
     border: lightgrey;
   }
- 
-  
 
 </style>
