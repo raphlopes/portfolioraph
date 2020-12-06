@@ -25,7 +25,8 @@
 <style scoped>
   .details-on-hover:hover img{
     /*filter: grayscale(70%);*/
-    opacity: 0.2;
+    opacity: 0.1;
+    transition: 0.5s;
   }
   
   .top-0{

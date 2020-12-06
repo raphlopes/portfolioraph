@@ -78,7 +78,7 @@ html {
 .back-top-fixed {
   position: fixed;
   z-index: 3;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 60px;
   display: block;
   bottom: 4%;
@@ -88,7 +88,7 @@ html {
 }
 
 .icon-back-top {
-  fill: gray;
+  fill: #222222;
   height: 24px;
   opacity: 1;
   position: absolute;

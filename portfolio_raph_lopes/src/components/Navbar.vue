@@ -43,9 +43,9 @@
       
               <instagramr-icon></instagramr-icon>
             </a>
-            <a href="https://twitter.com/Nefaaarx" target="_blank" class="px-2 my-lg-auto  ">
+           <!-- <a href="https://twitter.com/Nefaaarx" target="_blank" class="px-2 my-lg-auto  ">
               <twitter-icon></twitter-icon>
-            </a>
+            </a> -->
             <a href="mailto:lopesraphael94@gmail.com" class="px-2 my-lg-auto  ">
               <mail-icon></mail-icon>
     
@@ -61,7 +61,7 @@
 </template>
 
 <script>
-    import TwitterIcon from "@/assets/icon/twitter.svg"
+    //import TwitterIcon from "@/assets/icon/twitter.svg"
     import MailIcon from "@/assets/icon/mail.svg"
     import InstagramrIcon from "@/assets/icon/instagram.svg"
     
@@ -80,7 +80,7 @@
         },
         components: {
 
-            TwitterIcon,
+           // TwitterIcon,
             InstagramrIcon,
             MailIcon
         },
