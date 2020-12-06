@@ -1,19 +1,13 @@
 <template>
-  <div class="d-flex flex-wrap px-4 w-100" :key="category">
+  <div class=" " :key="category">
     
-      <div :class="classList"  v-for="(pic,index) in selectedPictures" :key="index">
-    
-    
-        <picture-item :pic="pic" @selectCategory="$emit('selectCategory',pic.category)"></picture-item>
-  
-  
-      </div>
-    
+    <vue-masonry-gallery :imgsArr="selectedPictures"  class=" " hrefKey="src" :height="height" :maxCols="3" ref="gallery" :imgWidth="500" :target="'modal'" ></vue-masonry-gallery>
     
   </div>
 </template>
 
 <script>
+  //https://github.com/parys-github/vue-masonry-gallery#3-props
   import PictureItem from "./PictureItem";
 
   import PicJapanCover from "@/assets/imgcover/japan.jpg"
@@ -91,8 +85,9 @@
   import PicGreece17 from "@/assets/img/greece/PicGreece (17).jpg"
   import PicGreece18 from "@/assets/img/greece/PicGreece (18).jpg"
 
+
   export default {
-        name: "PicturesSelector",
+        name: "PicturesSelectorMasonery",
         props : {
           
             classList : {
@@ -113,14 +108,19 @@
             }
         },
         components: {
-            PictureItem
+            PictureItem,
+            VueMasonryGallery
+            
         },
         data : function (){
           
             return {
+                height:"80vh",
+                width:100,
+                backdoor:0,
                 pictures : [
                     {
-                        picture : PicJapanCover,
+                        src : PicJapanCover,
                         textOnHover : "Japan",
 
                         hover : false,
@@ -129,7 +129,7 @@
                         main: true
                     },
                     {
-                        picture : PicGreeceCover,
+                        src : PicGreeceCover,
                         textOnHover : "Greece",
                         hover : false,
 
@@ -137,7 +137,7 @@
                         main : true
                     },
                     {
-                        picture : PicPortugalCover,
+                        src : PicPortugalCover,
                         textOnHover : "Portugal",
                         hover : false,
 
@@ -145,7 +145,7 @@
                         main : true
                     },
                     {
-                        picture : PicJapan1,
+                        src : PicJapan1,
                         textOnHover : "Tokyo Anime Street",
                         hover : false,
 
@@ -153,7 +153,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan2,
+                        src : PicJapan2,
                         textOnHover : "Kabukichō by Night (歌舞伎町)",
                         hover : false,
 
@@ -161,7 +161,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan3,
+                        src : PicJapan3,
                         textOnHover : "Purple Reflection",
                         hover : false,
 
@@ -169,7 +169,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan4,
+                        src : PicJapan4,
                         textOnHover : "",
                         hover : false,
 
@@ -177,7 +177,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan5,
+                        src : PicJapan5,
                         textOnHover : "Fushimi Inari-Taisha",
                         hover : false,
 
@@ -185,7 +185,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan6,
+                        src : PicJapan6,
                         textOnHover : "SAGANO CHIKURIN",
                         hover : false,
 
@@ -193,7 +193,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan7,
+                        src : PicJapan7,
                         textOnHover : "Kyoto in Anime",
                         hover : false,
 
@@ -201,7 +201,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan8,
+                        src : PicJapan8,
                         textOnHover : "Tokyo in Anime",
                         hover : false,
 
@@ -209,7 +209,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan9,
+                        src : PicJapan9,
                         textOnHover : "Ginkaku-ji in Anime",
                         hover : false,
 
@@ -217,7 +217,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan10,
+                        src : PicJapan10,
                         textOnHover : "Ginkaku-ji in Anime",
                         hover : false,
 
@@ -225,7 +225,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan11,
+                        src : PicJapan11,
                         textOnHover : "Kyoto Sunset",
                         hover : false,
 
@@ -233,7 +233,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan12,
+                        src : PicJapan12,
                         textOnHover : "Dotonbori sunset",
                         hover : false,
 
@@ -241,7 +241,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan13,
+                        src : PicJapan13,
                         textOnHover : "Dotonbori Purple",
                         hover : false,
 
@@ -249,7 +249,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan14,
+                        src : PicJapan14,
                         textOnHover : "Osaka Never sleep",
                         hover : false,
 
@@ -257,7 +257,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan15,
+                        src : PicJapan15,
                         textOnHover : "Gaming Arcade in Osaka",
                         hover : false,
 
@@ -265,7 +265,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan16,
+                        src : PicJapan16,
                         textOnHover : "Shinseikai in Anime",
                         hover : false,
 
@@ -273,7 +273,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan17,
+                        src : PicJapan17,
                         textOnHover : "Miyajima leaves",
                         hover : false,
 
@@ -281,7 +281,7 @@
                         main : false
                     },
                     {
-                      picture : PicJapan18,
+                      src : PicJapan18,
                       textOnHover : "Shibuya by night",
                       hover : false,
 
@@ -289,7 +289,7 @@
                       main : false
                     },
                     {
-                      picture : PicJapan19,
+                      src : PicJapan19,
                       textOnHover : "Ema",
                       hover : false,
 
@@ -297,7 +297,7 @@
                       main : false
                     },
                     {
-                      picture : PicJapan20,
+                      src : PicJapan20,
                       textOnHover : "Tokyo Tower",
                       hover : false,
 
@@ -305,7 +305,7 @@
                       main : false
                     },
                     {
-                        picture : PicJapan21,
+                        src : PicJapan21,
                         textOnHover : "Kyoto Subway Entrance",
                         hover : false,
 
@@ -313,7 +313,7 @@
                         main : false
                     },
                     {
-                      picture : PicJapan22,
+                      src : PicJapan22,
                       textOnHover : "Kyoto Temple in Anime",
                       hover : false,
 
@@ -321,7 +321,7 @@
                       main : false
                     },
                     {
-                        picture : PicJapan23,
+                        src : PicJapan23,
                         textOnHover : "Kyoto Anime City",
                         hover : false,
 
@@ -329,7 +329,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan24,
+                        src : PicJapan24,
                         textOnHover : "Shinjuku Sunset in Anime",
                         hover : false,
 
@@ -337,7 +337,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan25,
+                        src : PicJapan25,
                         textOnHover : "Memory Lane",
                         hover : false,
 
@@ -345,7 +345,7 @@
                         main : false
                     },
                     {
-                      picture : PicJapan26,
+                      src : PicJapan26,
                       textOnHover : "Memory Lane",
                       hover : false,
 
@@ -353,7 +353,7 @@
                       main : false
                     },
                     {
-                        picture : PicJapan27,
+                        src : PicJapan27,
                         textOnHover : "Kabukichō Lights",
                         hover : false,
 
@@ -361,7 +361,7 @@
                         main : false
                     },
                     {
-                        picture : PicJapan28,
+                        src : PicJapan28,
                         textOnHover : "Godzilla Road",
                         hover : false,
 
@@ -369,7 +369,7 @@
                         main : false
                     },
                     {
-                      picture : PicJapan29,
+                      src : PicJapan29,
                       textOnHover : "Tokyo on a Rainy Day",
                       hover : false,
 
@@ -377,7 +377,7 @@
                       main : false
                     },
                     {
-                      picture : PicJapan30,
+                      src : PicJapan30,
                       textOnHover : "Shinjuku Station",
                       hover : false,
 
@@ -385,7 +385,7 @@
                       main : false
                     },
                     {
-                      picture : PicJapan31,
+                      src : PicJapan31,
                       textOnHover : "Purple Sunset",
                       hover : false,
 
@@ -393,7 +393,7 @@
                       main : false
                     },
                     {
-                        picture : PicJapan32,
+                        src : PicJapan32,
                         textOnHover : "Last evening",
                         hover : false,
 
@@ -401,7 +401,7 @@
                         main : false
                     },
                     {
-                      picture : PicPortugal1,
+                      src : PicPortugal1,
                       textOnHover : "Pastel City",
                       hover : false,
 
@@ -409,7 +409,7 @@
                       main : false
                     },
                     {
-                      picture : PicPortugal2,
+                      src : PicPortugal2,
                       textOnHover : "White walls",
                       hover : false,
 
@@ -417,7 +417,7 @@
                       main : false
                     },
                     {
-                        picture : PicPortugal3,
+                        src : PicPortugal3,
                         textOnHover : "White walls",
                         hover : false,
 
@@ -425,7 +425,7 @@
                         main : false
                     },
                     {
-                        picture : PicPortugal4,
+                        src : PicPortugal4,
                         textOnHover : "Nazare from Above",
                         hover : false,
 
@@ -433,7 +433,7 @@
                         main : false
                     },
                     {
-                        picture : PicPortugal5,
+                        src : PicPortugal5,
                         textOnHover : "Across the Sea",
                         hover : false,
 
@@ -441,7 +441,7 @@
                         main : false
                     },
                     {
-                        picture : PicPortugal6,
+                        src : PicPortugal6,
                         textOnHover : "The Sun is setting",
                         hover : false,
 
@@ -449,7 +449,7 @@
                         main : false
                     },
                     {
-                      picture : PicPortugal7,
+                      src : PicPortugal7,
                       textOnHover : "Orange Mood",
                       hover : false,
 
@@ -457,7 +457,7 @@
                       main : false
                     },
                     {
-                      picture : PicPortugal8,
+                      src : PicPortugal8,
                       textOnHover : "Pastel Door",
                       hover : false,
 
@@ -465,7 +465,7 @@
                       main : false
                     },
                     {
-                        picture : PicPortugal9,
+                        src : PicPortugal9,
                         textOnHover : "Jellyfish",
                         hover : false,
 
@@ -473,7 +473,7 @@
                         main : false
                     },
                     {
-                        picture : PicPortugal10,
+                        src : PicPortugal10,
                         textOnHover : "Jellyfish",
                         hover : false,
 
@@ -481,7 +481,7 @@
                         main : false
                     },
                     {
-                        picture : PicPortugal11,
+                        src : PicPortugal11,
                         textOnHover : "Pastel Alley",
                         hover : false,
 
@@ -489,7 +489,7 @@
                         main : false
                     },
                     {
-                      picture : PicPortugal12,
+                      src : PicPortugal12,
                       textOnHover : "Pastel Window",
                       hover : false,
 
@@ -497,7 +497,7 @@
                       main : false
                     },
                     {
-                        picture : PicPortugal13,
+                        src : PicPortugal13,
                         textOnHover : "Purple Flowers",
                         hover : false,
 
@@ -505,7 +505,7 @@
                         main : false
                     },
                     {
-                      picture : PicPortugal14,
+                      src : PicPortugal14,
                       textOnHover : "Purple Flowers",
                       hover : false,
 
@@ -513,7 +513,7 @@
                       main : false
                     },
                     {
-                    picture : PicPortugal15,
+                    src : PicPortugal15,
                     textOnHover : "Lisbon view",
                     hover : false,
 
@@ -521,7 +521,7 @@
                     main : false
                   },
                     {
-                    picture : PicPortugal16,
+                    src : PicPortugal16,
                     textOnHover : "Tramway",
                     hover : false,
 
@@ -529,7 +529,7 @@
                     main : false
                   },
                     {
-                      picture : PicPortugal17,
+                      src : PicPortugal17,
                       textOnHover : "Small Coffee",
                       hover : false,
 
@@ -537,7 +537,7 @@
                       main : false
                     },
                     {
-                    picture : PicPortugal18,
+                    src : PicPortugal18,
                     textOnHover : "Sunset along the Sea",
                     hover : false,
 
@@ -545,7 +545,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece1,
+                    src : PicGreece1,
                     textOnHover : "First Night",
                     hover : false,
 
@@ -553,7 +553,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece2,
+                    src : PicGreece2,
                     textOnHover : "Purple Sky over Santorini",
                     hover : false,
 
@@ -561,7 +561,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece3,
+                    src : PicGreece3,
                     textOnHover : "House like a painting",
                     hover : false,
 
@@ -569,7 +569,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece4,
+                    src : PicGreece4,
                     textOnHover : "Parthenon during dusk",
                     hover : false,
 
@@ -577,7 +577,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece5,
+                    src : PicGreece5,
                     textOnHover : "Athens after dark",
                     hover : false,
 
@@ -585,7 +585,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece6,
+                    src : PicGreece6,
                     textOnHover : "Ela na sou po",
                     hover : false,
 
@@ -593,7 +593,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece7,
+                    src : PicGreece7,
                     textOnHover : "Athens road in Pastel",
                     hover : false,
 
@@ -601,7 +601,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece8,
+                    src : PicGreece8,
                     textOnHover : "Sea at Cap Sounion",
                     hover : false,
 
@@ -609,7 +609,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece9,
+                    src : PicGreece9,
                     textOnHover : "Poseidon Temple",
                     hover : false,
 
@@ -617,7 +617,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece10,
+                    src : PicGreece10,
                     textOnHover : "Red Sunset",
                     hover : false,
 
@@ -625,7 +625,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece11,
+                    src : PicGreece11,
                     textOnHover : "Flashing lights",
                     hover : false,
 
@@ -633,7 +633,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece12,
+                    src : PicGreece12,
                     textOnHover : "Athens after dark",
                     hover : false,
 
@@ -641,7 +641,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece13,
+                    src : PicGreece13,
                     textOnHover : "First day in Santorini",
                     hover : false,
 
@@ -649,7 +649,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece14,
+                    src : PicGreece14,
                     textOnHover : "Όλα Καλά",
                     hover : false,
 
@@ -657,7 +657,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece15,
+                    src : PicGreece15,
                     textOnHover : "Friendship",
                     hover : false,
 
@@ -665,7 +665,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece16,
+                    src : PicGreece16,
                     textOnHover : "Fira view",
                     hover : false,
 
@@ -673,7 +673,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece17,
+                    src : PicGreece17,
                     textOnHover : "Along the sea",
                     hover : false,
 
@@ -681,7 +681,7 @@
                     main : false
                   },
                   {
-                    picture : PicGreece18,
+                    src : PicGreece18,
                     textOnHover : "Sunset over the rocks",
                     hover : false,
 
@@ -693,8 +693,17 @@
                 ],
             }
         },
+      
         computed : {
-            
+            calculatedHeigh: function (){
+              
+                this.backdoor;
+                if(this.$refs.gallery){
+                    return
+                }else{
+                    return 0
+                }
+            },
             selectedPictures : function () {
 
                 let pictures = this.pictures;
@@ -729,11 +738,12 @@
         
         },
       mounted() {
+            this.backdoor++;
       }
   }
 </script>
 
-<style scoped>
+<style>
   
   .textcover{
     font-family: sans-serif;
@@ -741,6 +751,12 @@
   .img-covers{
     border: lightgrey;
   }
+  
+  .ball-beat{
+    display: none!important;
+  }
+  
+  
  
   
 

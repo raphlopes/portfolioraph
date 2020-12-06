@@ -7,7 +7,8 @@
       </a>
     
     </div>
-    <pictures-selector :category="category" @selectCategory="category=$event"></pictures-selector>
+    <pictures-selector :category="category" @selectCategory="category=$event" v-if="category==0"></pictures-selector>
+    <pictures-selector-masonry :category="category" @selectCategory="category=$event" v-else></pictures-selector-masonry>
   </section>
 
 </template>
@@ -15,10 +16,11 @@
 <script>
 
   
+    import PicturesSelectorMasonry from "../components/PicturesLayout/PicturesSelectorMasonry";
     import PicturesSelector from "../components/PicturesLayout/PicturesSelector";
     export default {
       name: "MyWork",
-        components: {PicturesSelector},
+        components: {PicturesSelectorMasonry,PicturesSelector},
         data() {
         return {
           
