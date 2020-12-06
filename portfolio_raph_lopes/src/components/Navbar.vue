@@ -8,7 +8,7 @@
       <button data-toggle="collapse" class="navbar-toggler hamburger hamburger--collapse py-0" data-target="#navbarNav"
               @click="togglerHamburger" :class="{'is-active': isActive}">
         <span class="sr-only">Toggle navigation</span>
-        <span class="hamburger-box">
+        <span class="hamburger-box d-flex d-lg-none flex-column justify-content-center">
             <span class="hamburger-inner"></span>
           </span>
       </button>
