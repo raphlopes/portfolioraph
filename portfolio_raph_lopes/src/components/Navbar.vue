@@ -14,10 +14,10 @@
       </button>
     
     </div>
-    <div class="collapse navbar-collapse d-lg-flex w-100 " id="navbarNav" :style="navbarCustom" >
+    <div class="collapse navbar-collapse d-lg-flex w-100 h-100" id="navbarNav" :style="navbarCustom" >
       <transition name="fade-nav" >
       
-        <div v-if="isActiveReal" class="h-100">
+        <div v-if="isActiveReal" class="h-100 w-100 d-lg-flex">
           <ul class="nav navbar-nav w-100 flex-lg-row flex-column justify-content-center"   >
             <li class="nav-item" @click="closeNavBar">
               <router-link id="accueil" class="nav-link" to="/">Accueil</router-link>
@@ -38,15 +38,15 @@
   
           </ul>
   
-          <div class="social-icons d-flex justify-content-lg-end justify-content-center col-lg-2 col-12">
-            <a href="https://instagram.com/raph_lop" target="_blank" class="px-2 ">
+          <div class="social-icons d-flex justify-content-lg-end justify-content-center col-lg-2 col-12" :style="'height :' + (!this.isActive && this.isActiveReal? 'unset':'20%')">
+            <a href="https://instagram.com/raph_lop" target="_blank" class="px-2 my-lg-auto">
       
               <instagramr-icon></instagramr-icon>
             </a>
-            <a href="https://twitter.com/Nefaaarx" target="_blank" class="px-2  ">
+            <a href="https://twitter.com/Nefaaarx" target="_blank" class="px-2 my-lg-auto  ">
               <twitter-icon></twitter-icon>
             </a>
-            <a href="mailto:lopesraphael94@gmail.com" class="px-2  ">
+            <a href="mailto:lopesraphael94@gmail.com" class="px-2 my-lg-auto  ">
               <mail-icon></mail-icon>
     
             </a>
@@ -112,19 +112,26 @@
             navbarCustom : function(){
             
                 return{
-                    height : (this.isActiveReal? (this.windowHeight+this.$refs.navbar.clientHeight)+"px":"0vh")+"!important",
+                    height : (this.isActive && this.isActiveReal? (this.windowHeight+this.$refs.navbar.clientHeight)+"px": (!this.isActive && this.isActiveReal? "100%":"0vh"))+"!important",
                     display: "block",
-                    "padding-bottom" : (this.isMounted && this.isActiveReal?this.$refs.navbar.clientHeight:0)+"px"
+                    "padding-bottom" : (this.isMounted && this.isActiveReal && this.isActive?this.$refs.navbar.clientHeight:0)+"px",
+                    "font-size": (!this.isActive && this.isActiveReal? "large":"x-large")
                 }
             },
-            isActiveReal : function () {
+            isActiveReal : {
 
-                
-                if(this.windowWidth>992){
-                    return true;
-                }else{
-                    return this.isActive;
+                get(){
+                    if(this.windowWidth>992){
+                        return true;
+                    }else{
+                        return this.isActive;
+                    }
+                },
+                set(newvalue){
+                    this.windowWidth = value;
                 }
+                
+                
             }
 
 
@@ -134,14 +141,12 @@
             this.windowWidth = window.innerWidth;
 
             this.windowHeight= window.innerHeight;
-            this.isActive = this.isActiveReal();
-            window.addEventListener('resize', () => {
-                this.windowWidth = window.innerWidth
-                this.windowHeight= window.innerHeight
-            })
+            this.isActive = false;
+            
         },
         created: function () {
             window.addEventListener('scroll', this.handleScroll);
+            
         }
     }
 
@@ -183,14 +188,12 @@
   
   
   .navbar-collapse {
-    font-size: x-large;
     
     .navbar-nav {
       height: 80%;
     }
     
     .social-icons {
-      height: 20%;
       svg {
         height: 30px;
         width: 30px;
