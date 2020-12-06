@@ -1,7 +1,7 @@
 <template>
   <div class="home">
 
-    <pictures-selector class="mt-5" :random="true" :max-picture-number="3"></pictures-selector>
+    <pictures-selector class="mt-5" :random="true" :max-picture-number="9"></pictures-selector>
   </div>
 </template>
 
@@ -14,4 +14,7 @@ import PicturesSelector from "../components/PicturesLayout/PicturesSelector";
 export default {
     components: {PicturesSelector}
 }
+
+
+
 </script>

@@ -22,15 +22,17 @@
             <li class="nav-item" @click="closeNavBar">
               <router-link id="accueil" class="nav-link" to="/">Accueil</router-link>
             </li>
+            <!--
             <li class="nav-item" @click="closeNavBar">
               <router-link class="nav-link"  to="/about">About me</router-link>
             </li>
+            -->
             <li class="nav-item" @click="closeNavBar">
               <router-link class="nav-link" to="/work">My Work</router-link>
             </li>
-            <li class="nav-item" @click="closeNavBar">
+          <!--  <li class="nav-item" @click="closeNavBar">
               <router-link class="nav-link"  to="/shop">Shop</router-link>
-            </li>
+            </li> -->
             <li class="nav-item" @click="closeNavBar">
               <router-link class="nav-link" to="/contact">Contact</router-link>
             </li>
@@ -179,7 +181,6 @@
   }
   
   .navbar-collapse {
-    
     transition: height 0.5s ease-in-out;
   }
   
@@ -188,7 +189,11 @@
     padding-right: 3%
     
   }
-  
+
+  .portfolio-navbar .navbar-nav .nav-link {
+    font-weight: normal;
+    font-size: 120%;
+  }
   
   .navbar-collapse {
     
@@ -198,8 +203,8 @@
     
     .social-icons {
       svg {
-        height: 30px;
-        width: 30px;
+        height: 25px;
+        width: 25px;
         margin: 0 14px;
       }
     }
@@ -257,7 +262,7 @@
   /* Les animations d'entrée (« enter ») et de sortie (« leave »)  */
   /* peuvent utiliser différentes fonctions de durée et de temps.  */
   .fade-nav-enter-active {
-    transition: all .3s 0.5s ease;
+    transition: all 0.3s 0.3s ease-in;
   }
   .fade-nav-leave-active {
     transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);

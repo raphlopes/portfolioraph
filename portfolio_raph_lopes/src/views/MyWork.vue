@@ -33,11 +33,11 @@
 <style scoped>
 
   .espacing{
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
   }
   .ft1{
-
+    text-decoration:none;
     font-family: vcsm;
     font-size: 1.5em;
     font-style: normal;

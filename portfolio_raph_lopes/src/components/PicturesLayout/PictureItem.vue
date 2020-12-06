@@ -23,6 +23,12 @@
 </script>
 
 <style scoped>
+
+  .textcover{
+    justify-content: center;
+    font-size: 120%;
+  }
+
   .details-on-hover:hover img{
     /*filter: grayscale(70%);*/
     opacity: 0.1;

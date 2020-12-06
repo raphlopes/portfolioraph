@@ -72,6 +72,25 @@
   import PicPortugal17 from "@/assets/img/portugal/PicPortugal (17).jpg"
   import PicPortugal18 from "@/assets/img/portugal/PicPortugal (18).jpg"
 
+  import PicGreece1 from "@/assets/img/greece/PicGreece (1).jpg"
+  import PicGreece2 from "@/assets/img/greece/PicGreece (2).jpg"
+  import PicGreece3 from "@/assets/img/greece/PicGreece (3).jpg"
+  import PicGreece4 from "@/assets/img/greece/PicGreece (4).jpg"
+  import PicGreece5 from "@/assets/img/greece/PicGreece (5).jpg"
+  import PicGreece6 from "@/assets/img/greece/PicGreece (6).jpg"
+  import PicGreece7 from "@/assets/img/greece/PicGreece (7).jpg"
+  import PicGreece8 from "@/assets/img/greece/PicGreece (8).jpg"
+  import PicGreece9 from "@/assets/img/greece/PicGreece (9).jpg"
+  import PicGreece10 from "@/assets/img/greece/PicGreece (10).jpg"
+  import PicGreece11 from "@/assets/img/greece/PicGreece (11).jpg"
+  import PicGreece12 from "@/assets/img/greece/PicGreece (12).jpg"
+  import PicGreece13 from "@/assets/img/greece/PicGreece (13).jpg"
+  import PicGreece14 from "@/assets/img/greece/PicGreece (14).jpg"
+  import PicGreece15 from "@/assets/img/greece/PicGreece (15).jpg"
+  import PicGreece16 from "@/assets/img/greece/PicGreece (16).jpg"
+  import PicGreece17 from "@/assets/img/greece/PicGreece (17).jpg"
+  import PicGreece18 from "@/assets/img/greece/PicGreece (18).jpg"
+
   export default {
         name: "PicturesSelector",
         props : {
@@ -102,7 +121,8 @@
                 pictures : [
                     {
                         picture : PicJapanCover,
-                        textOnHover : "Japon",
+                        textOnHover : "Japan",
+
                         hover : false,
                         link : "",
                         category : 1,
@@ -110,7 +130,7 @@
                     },
                     {
                         picture : PicGreeceCover,
-                        textOnHover : "Grece",
+                        textOnHover : "Greece",
                         hover : false,
 
                         category : 2,
@@ -342,19 +362,11 @@
                     },
                     {
                         picture : PicJapan28,
-                        textOnHover : "Goadzilla Road",
+                        textOnHover : "Godzilla Road",
                         hover : false,
 
                         category : 1,
                         main : false
-                    },
-                    {
-                      picture : PicJapan29,
-                      textOnHover : "Godzilla Road",
-                      hover : false,
-
-                      category : 1,
-                      main : false
                     },
                     {
                       picture : PicJapan29,
@@ -530,6 +542,150 @@
                     hover : false,
 
                     category : 3,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece1,
+                    textOnHover : "First Night",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece2,
+                    textOnHover : "Purple Sky over Santorini",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece3,
+                    textOnHover : "House like a painting",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece4,
+                    textOnHover : "Parthenon during dusk",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece5,
+                    textOnHover : "Athens after dark",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece6,
+                    textOnHover : "Ela na sou po",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece7,
+                    textOnHover : "Athens road in Pastel",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece8,
+                    textOnHover : "Sea at Cap Sounion",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece9,
+                    textOnHover : "Poseidon Temple",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece10,
+                    textOnHover : "Red Sunset",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece11,
+                    textOnHover : "Flashing lights",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece12,
+                    textOnHover : "Athens after dark",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece13,
+                    textOnHover : "First day in Santorini",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece14,
+                    textOnHover : "Όλα Καλά",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece15,
+                    textOnHover : "Friendship",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece16,
+                    textOnHover : "Fira view",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece17,
+                    textOnHover : "Along the sea",
+                    hover : false,
+
+                    category : 2,
+                    main : false
+                  },
+                  {
+                    picture : PicGreece18,
+                    textOnHover : "Sunset over the rocks",
+                    hover : false,
+
+                    category : 2,
                     main : false
                   },
 
