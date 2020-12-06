@@ -2,7 +2,7 @@
   
   <nav class="navbar navbar-dark navbar-expand-lg fixed-top portfolio-navbar navgradient px-0 px-lg-5"
        @mouseover="hover = true" @mouseleave="hover = false" :style="navbar">
-    <div class="d-flex col-12 col-lg-2 justify-content-between ">
+    <div class="d-flex col-12 col-lg-2 justify-content-between " ref="navbar">
       <router-link class="navbar-brand logo" to="/">Raph-folio</router-link>
       
       <button data-toggle="collapse" class="navbar-toggler hamburger hamburger--collapse py-0" data-target="#navbarNav"
@@ -14,8 +14,8 @@
       </button>
     
     </div>
-    <div class="collapse navbar-collapse d-lg-flex w-100" id="navbarNav">
-      <ul class="nav navbar-nav w-100 justify-content-lg-center d-flex flex-lg-row flex-column justify-content-around">
+    <div class="collapse navbar-collapse d-lg-flex w-100 " id="navbarNav" :style="customPadding">
+      <ul class="nav navbar-nav w-100 justify-content-lg-center d-flex flex-lg-row flex-column justify-content-around"  >
         <li class="nav-item" @click="closeNavBar">
           <router-link id="accueil" class="nav-link" to="/">Accueil</router-link>
         </li>
@@ -65,7 +65,8 @@
             return {
                 scrollPosition: 0,
                 hover: false,
-                isActive: false
+                isActive: false,
+                isMounted : false
             }
         },
         components: {
@@ -99,8 +100,17 @@
                 }
 
             },
+            customPadding: function () {
+
+                
+                return { "padding-bottom" : (this.isMounted && this.isActive?this.$refs.navbar.clientHeight:0)+"px"}
+                
+            }
 
 
+        },
+        mounted() {
+            this.isMounted = true;
         },
         created: function () {
             window.addEventListener('scroll', this.handleScroll);
@@ -145,7 +155,7 @@
   
   .navbar-collapse.show {
     height: 100vh !important;
-    padding-bottom: 50px;
+    
     font-size: x-large;
     
     .navbar-nav {
@@ -164,7 +174,7 @@
   }
   
   .navbar-collapse.collapsing {
-    
+    padding: 0!important;
     font-size: x-large;
     
     .navbar-nav {
