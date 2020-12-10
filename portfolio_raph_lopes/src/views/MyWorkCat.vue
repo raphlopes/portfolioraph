@@ -2,12 +2,12 @@
   <section class="covers">
     <div class="w-100 d-flex justify-content-center espacing" >
 
-      <a  @click="category = 0" class="px-4 text-white pb-3 pointer ft1" v-if="category!==0">
+      <a class="px-4 text-white pb-3 pointer ft1" @click="goBack()">
        Back
       </a>
     
     </div>
-    <pictures-selector @selectCategory="chooseCategory" :category="category"></pictures-selector>
+    <pictures-selector :category="category"></pictures-selector>
 
   </section>
 
@@ -31,13 +31,13 @@
       },
         methods : {
 
-            chooseCategory : function (event) {
+            goBack : function (event) {
 
-                this.$router.push( {path: "/work/"+event})
+                this.$router.push( {path: "/work"})
             }
         }, mounted() {
           
-          this.category = Number(this.$route.query.category) || 0;
+          this.category = Number((this.$route.params.id)) || 0;
         }
     }
 </script>

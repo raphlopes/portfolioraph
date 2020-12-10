@@ -5,7 +5,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Contact from '../views/Contact.vue'
-import MyWork from '../views/MyWork'
+import MyWork from '../views/MyWork';
+import MyWorkCat from '../views/MyWorkCat'
 import Shop from "../views/Shop"
 import Work1 from "../views/Work1";
 import Work2 from "../views/Work2";
@@ -50,6 +51,14 @@ const routes = [
     path: '/work',
     name:'My Work',
     component: MyWork,
+    meta : {
+      title : "My Work"
+    }
+  },
+  {
+    path: '/work/:id',
+    name:'My Work',
+    component: MyWorkCat,
     meta : {
       title : "My Work"
     }
