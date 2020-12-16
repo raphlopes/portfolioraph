@@ -477,14 +477,14 @@
                         category : 3,
                         main : false
                     },
-                    {
-                        picture : PicPortugal6,
-                        textOnHover : "The Sun is setting",
-                        hover : false,
+                  {
+                    picture : PicPortugal6,
+                    textOnHover : "Sunset along the Sea",
+                    hover : false,
 
-                        category : 3,
-                        main : false
-                    },
+                    category : 3,
+                    main : false
+                  },
                     {
                       picture : PicPortugal7,
                       textOnHover : "Orange Mood",
@@ -573,9 +573,9 @@
                       category : 3,
                       main : false
                     },
-                    {
+                  {
                     picture : PicPortugal18,
-                    textOnHover : "Sunset along the Sea",
+                    textOnHover : "The Sun is setting",
                     hover : false,
 
                     category : 3,

@@ -22,17 +22,15 @@
             <li class="nav-item" @click="closeNavBar">
               <router-link id="accueil" class="nav-link" to="/">Accueil</router-link>
             </li>
-            <!--
             <li class="nav-item" @click="closeNavBar">
               <router-link class="nav-link"  to="/about">About me</router-link>
             </li>
-            -->
             <li class="nav-item" @click="closeNavBar">
               <router-link class="nav-link" to="/work">My Work</router-link>
             </li>
-          <!--  <li class="nav-item" @click="closeNavBar">
+            <li class="nav-item" @click="closeNavBar">
               <router-link class="nav-link"  to="/shop">Shop</router-link>
-            </li> -->
+            </li>
             <li class="nav-item" @click="closeNavBar">
               <router-link class="nav-link" to="/contact">Contact</router-link>
             </li>
