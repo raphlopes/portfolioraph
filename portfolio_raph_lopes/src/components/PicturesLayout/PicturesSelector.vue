@@ -348,16 +348,9 @@
                         category : 1,
                         main : false
                     },
-                    {
-                        picture : PicJapan25,
-                        textOnHover : "Memory Lane",
-                        hover : false,
 
-                        category : 1,
-                        main : false
-                    },
                     {
-                      picture : PicJapan26,
+                      picture : PicJapan25,
                       textOnHover : "Memory Lane",
                       hover : false,
 
@@ -365,20 +358,28 @@
                       main : false
                     },
                     {
-                        picture : PicJapan27,
-                        textOnHover : "Kabukichō Lights",
-                        hover : false,
+                      picture : PicJapan26,
+                      textOnHover : "Late Night Subways",
+                      hover : false,
 
-                        category : 1,
-                        main : false
+                      category : 1,
+                      main : false
                     },
                     {
-                        picture : PicJapan28,
-                        textOnHover : "Godzilla Road",
-                        hover : false,
+                      picture : PicJapan27,
+                      textOnHover : "Tokyo After Dark",
+                      hover : false,
 
-                        category : 1,
-                        main : false
+                      category : 1,
+                      main : false
+                    },
+                    {
+                      picture : PicJapan28,
+                      textOnHover : "Golden Gai After Dark",
+                      hover : false,
+
+                      category : 1,
+                      main : false
                     },
                     {
                       picture : PicJapan29,

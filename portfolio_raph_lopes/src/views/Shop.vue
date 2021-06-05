@@ -1,53 +1,31 @@
 <template>
 
-  <main class="page projets-page">
-    <section class="portfolio-block project-no-images">
-      <div class="container">
 
-        <div class="row">
+  <section class="covers p-5 m-5">
 
-          <div class=" tuile col-md-6 col-lg-4">
-            <div class="tuile-shop project-card-no-image">
-              <in-prnt></in-prnt>
-              <h4>You can shop my prints on InPrint here</h4><a class="btn btn-outline-primary btn-sm shopping" role="button" href="https://inprnt.com/gallery/raph_lopes" target="_blank">Shop Now</a>
-            </div>
-          </div>
+    <pictures-selector-shop> </pictures-selector-shop>
 
-          <div class="col-md-6 col-lg-4">
-            <div class="tuile-shop project-card-no-image">
-              <img class="fit-picture"
-                   src="@/assets/icon/darkroom.png"
-                   alt="darkroom">
-              <h4>You can shop my prints on DarkRoom here</h4><a class="btn btn-outline-primary btn-sm shopping" role="button" href="https://lopesraphael.darkroom.tech/" target="_blank">Shop Now</a>
-            </div>
-          </div>
- <!--
-          <div class="col-md-6 col-lg-4">
-            <div class="tuile-shop project-card-no-image">
-              <h3>Society6</h3>
-              <h4>You can shop my prints on Society6 here</h4><a class="btn btn-outline-primary btn-sm" role="button" href="#" target="_blank">Shop</a>
-            </div>
-          </div>
-  -->
-
-        </div>
-      </div>
-    </section>
-  </main>
+  </section>
 
 </template>
 
 <script>
 
-import inPrnt from "@/assets/icon/inprnt.svg"
+import PicturesSelectorShop from "../components/PicturesLayout/PicturesSelectorShop";
+import PicturesSelectorMasonry from "../components/PicturesLayout/PicturesSelectorMasonry";
 
 export default {
-name: "Shop",
+  components: {PicturesSelectorMasonry,PicturesSelectorShop},
+  data() {
+    return {
 
-  components: {
-    inPrnt,
-  },
+      hover: false,
+      category: 0
+
+    };
+  }
 }
+
 </script>
 
 <style scoped lang="scss">

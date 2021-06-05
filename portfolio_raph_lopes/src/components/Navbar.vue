@@ -3,7 +3,7 @@
   <nav class="navbar navbar-dark navbar-expand-lg fixed-top portfolio-navbar navgradient px-0 px-lg-5"
        @mouseover="hover = true" @mouseleave="hover = false" :style="navbar">
     <div class="d-flex col-12 col-lg-2 justify-content-between " ref="navbar">
-      <router-link class="navbar-brand logo" to="/">Raph-folio</router-link>
+      <router-link class="navbar-brand logo" to="/">Raph-Folio</router-link>
       
       <button class="navbar-toggler hamburger hamburger--collapse py-0"
               @click="togglerHamburger" :class="{'is-active': isActive}">
@@ -20,7 +20,7 @@
         <div v-if="isActiveReal" class="h-100 w-100 d-lg-flex">
           <ul class="nav navbar-nav w-100 flex-lg-row flex-column justify-content-center"   >
             <li class="nav-item" @click="closeNavBar">
-              <router-link id="accueil" class="nav-link" to="/">Accueil</router-link>
+              <router-link id="accueil" class="nav-link" to="/">Home</router-link>
             </li>
             <li class="nav-item" @click="closeNavBar">
               <router-link class="nav-link"  to="/about">About me</router-link>
@@ -43,25 +43,27 @@
       
               <instagramr-icon></instagramr-icon>
             </a>
-           <!-- <a href="https://twitter.com/Nefaaarx" target="_blank" class="px-2 my-lg-auto  ">
+
+           <a href="https://twitter.com/Nefaaarx" target="_blank" class="px-2 my-lg-auto  ">
               <twitter-icon></twitter-icon>
-            </a> -->
+            </a>
             <a href="mailto:lopesraphael94@gmail.com" class="px-2 my-lg-auto  ">
               <mail-icon></mail-icon>
-    
             </a>
+
           </div>
         </div>
       
       
       </transition>
+
     </div>
   </nav>
 
 </template>
 
 <script>
-    //import TwitterIcon from "@/assets/icon/twitter.svg"
+    import TwitterIcon from "@/assets/icon/twitter.svg"
     import MailIcon from "@/assets/icon/mail.svg"
     import InstagramrIcon from "@/assets/icon/instagram.svg"
     
