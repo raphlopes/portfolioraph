@@ -4,8 +4,8 @@ const countryList = require('country-list');
 const admin = require ( "firebase-admin" );
 const fsdb = admin.firestore();
 
-const stripe = require('stripe')('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');
-const stripeTest = require('stripe')('sk_test_51Mp37oFyDIBgBPAqu9WJ96VYkKZJyU5fVbBZxJwtVXljtHTR61QF4YezQUwFozVT9da2kgaFkSgGUzsYEhUCOKyk00O3bXbzGh');
+const stripe = require('stripe')(process.env.STRIPE_API_KEY);
+const stripeTest = require('stripe')(process.env.STRIPE_API_KEY_TEST);
 
 function formatAmount(amount, currency) {
     const formattedAmount = new Intl.NumberFormat('fr-FR', {
