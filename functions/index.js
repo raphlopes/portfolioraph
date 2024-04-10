@@ -303,8 +303,8 @@ exports.createCheckoutSession = functions.https.onCall(async (data, context) => 
 
 exports.payment_succeeded = functions.https.onRequest(async (req, res) => {
 
-    const endpointSecretTest = 'whsec_fd1abbba6f4252528c21dc0bd30c5bc403defcf92dc5cf9a7c10b9c785c06ecc';
-    const endpointSecret = 'whsec_GFbaQhjaOIFoSOnmeJwhyvIF96dh4VEm';
+    const endpointSecretTest = process.env.STRIPE_WEBHOOK_SECRET_TEST;
+    const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
     const sig = req.headers['stripe-signature'];
 
@@ -358,7 +358,7 @@ exports.checkAdminPassword = functions.https.onCall((data, context) => {
 
     const password = data.password;
     console.log("entered password", password);
-    const adminPassword = 'DIablo94.'; // Replace with your actual admin password
+    const adminPassword = process.env.ADMIN_PASS; // Replace with your actual admin password
 
     if (password === adminPassword) {
         return true;
